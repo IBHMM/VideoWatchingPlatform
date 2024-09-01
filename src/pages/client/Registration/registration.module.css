@@ -1,0 +1,8 @@
+@media (max-width: 900px) {
+    .registration {
+        background-image: url('../../../assets/images/fancy.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function ErrorSection7() {
   return (
@@ -19,12 +20,12 @@ export function ErrorSection7() {
           Don&apos;t worry, our team is already on it. Please try refreshing the
           page or come back later.
         </p>
-        <button
-          onClick={() => window.location.href = "/"}
+        <Link 
+          to={"/client/home"}
           className="w-full px-4 py-2 bg-gray-500 text-white rounded-md md:w-[8rem]"
         >
           Back Home
-        </button>
+        </Link>
       </div>
     </div>
   );

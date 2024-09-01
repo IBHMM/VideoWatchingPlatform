@@ -1,0 +1,194 @@
+button.subscribe-button {
+    background-color: rgb(108, 82, 238);
+    background-image: linear-gradient(248.28deg, rgb(158, 97, 255) 9.54%, rgba(142, 97, 255, 0) 32.8%), 
+                      radial-gradient(81.71% 279.87% at -16.57% -92%, rgb(97, 155, 255) 28.69%, rgba(205, 219, 248, 0) 69.54%);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Metropolitano, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 50px;
+    padding: 15px 31px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease, transform 0.2s ease;
+    width: 184px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    background-size: 200% 200%;
+}
+
+button.subscribe-button:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+button.subscribe-button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    background-position: left center;
+}
+
+button.subscribe-button::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    z-index: -1;
+    border-radius: 14px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+button.subscribe-button:hover::before {
+    opacity: 1;
+}
+
+@media (max-width: 1030px) {
+    button.subscribe-button {
+        display: none;
+    }
+}
+
+.navbar_menu {
+    background-attachment: scroll;
+    transition: all 0.5s ease;
+    background-clip: border-box;
+    background-color: rgb(0, 3, 28);
+    background-image: none;
+    background-origin: padding-box;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-size: auto;
+    box-sizing: border-box;
+    color: rgb(204, 205, 210);
+    display: block;
+    font-family: Metropolitano, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    height: 1130px;
+    left: 0px;
+    line-height: 24px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    max-width: 80%;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    position: fixed;
+    scrollbar-color: auto;
+    scrollbar-width: thin;
+    text-size-adjust: 100%;
+    top: 0px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    transition-behavior: normal;
+    transition-delay: 0s;
+    transition-duration: 0.7s;
+    transition-property: all;
+    transition-timing-function: ease;
+    unicode-bidi: isolate;
+    visibility: visible;
+    width: 300px;
+    z-index: 99999;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.navbar_div {
+    align-content: flex-start;
+    box-sizing: border-box;
+    color: rgb(204, 205, 210);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Metropolitano, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    height: 319px;
+    line-height: 24px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    position: relative;
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+    visibility: visible;
+    width: 280px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+@keyframes openAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes closeAnimation {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+.animate-open {
+    animation: openAnimation 0.5s forwards ease;
+}
+
+.animate-close {
+    animation: closeAnimation 0.5s forwards ease;
+}
+
+.navbar_div {
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.topup {
+    box-sizing: border-box;
+    color: rgb(204, 205, 210);
+    display: flex;
+    font-family: Metropolitano;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    height: 288.562px;
+    line-height: 24px;
+    list-style: none;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 1320px;
+    pointer-events: none;
+    position: relative;
+    text-align: left;
+    text-size-adjust: 100%;
+    unicode-bidi: isolate;
+    visibility: hidden;
+    width: 1183px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
