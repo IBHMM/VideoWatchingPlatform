@@ -73,4 +73,4 @@ export const RegistrationApi = createApi({
   }),
 });
 
-export const { useLoginMutation, useSignupMutation, useRefreshMutation, useGetuserQuery, useGetcodeMutation, useVerifyMutation, useChangeMutation } = RegistrationApi;
+export const { useLoginMutation, useSignupMutation, useRefreshMutation, useGetuserQuery, useGetcodeMutation, useVerifyMutation, useChangeMutation, useLogoutMutation } = RegistrationApi;

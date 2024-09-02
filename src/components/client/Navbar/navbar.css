@@ -192,3 +192,17 @@ button.subscribe-button:hover::before {
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+@keyframes opening {
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+.features_menu {
+    animation: opening 1s ease-in-out;
+    overflow: hidden;
+}

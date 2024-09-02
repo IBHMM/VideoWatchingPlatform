@@ -6,6 +6,7 @@ import {
   SetTokenToLocalStorage,
 } from "../../../utils/client/LocalStorage";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export function Signin() {
     const [Login, { data, isLoading, isError, error, isSuccess }] = useLoginMutation();
@@ -20,7 +21,7 @@ export function Signin() {
 
     useEffect(() => {
         if (isSuccess) {
-            window.location = '/client/home';
+            window.location = '/client/home/a';
         }
     }, [isSuccess])
 

@@ -1,26 +1,11 @@
 import { Link } from 'react-router-dom';
 import './navbar.css';
 import logo from '../../../assets/icons/logo.png';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import arrow from '../../../assets/icons/arrow.png';
-import { Features } from './Navbar';
 
-export const Navbar_Menu = ({ setMenu }) => {
+export const Navbar_Menu = () => {
     const [featuresVisible, setFeaturesVisible] = useState(false);
-
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (e.target.id !== 'menu' || e.target.id == "menu_") {
-                setMenu(false);
-            }
-        };
-
-        window.addEventListener('click', handleClickOutside);
-
-        return () => {
-            window.removeEventListener('click', handleClickOutside);
-        };
-    }, []);
 
     return (
         <div className='navbar_menu absolute top-0 left-0 animate-open' id='menu'>
@@ -60,3 +45,30 @@ export const Navbar_Menu = ({ setMenu }) => {
         </div>
     );
 };
+
+
+export function Features() {
+    return (
+        <div 
+            className='flex flex-col items-center justify-between bg-white rounded-xl max-w-[1000px] features_menu' 
+        >
+            <div className='flex flex-col items-center justify-between w-[100%] text-black p-10'>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                    <li>Feature 4</li>
+                </ul>
+            </div>
+
+            <div className='flex flex-col items-center justify-between w-[100%] text-black p-10'>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                    <li>Feature 4</li>
+                </ul>
+            </div>
+        </div>
+    );
+}

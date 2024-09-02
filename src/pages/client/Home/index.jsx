@@ -1,15 +1,15 @@
-import { Outlet } from "react-router-dom"
-import { Navbar } from "../../../components/client/Navbar/Navbar"
+import { Outlet } from "react-router-dom";
+import { Navbar } from "../../../components/client/Navbar/Navbar";
 import { useGetuserQuery, useRefreshMutation } from "../../../redux/api/Authentication";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "../../../redux/slices/user";
 import { LoaderAnimation } from "../../../components/client/Layout/Animation/PageLoader";
+import { Footer } from "../../../components/client/Footer/Footer";
 
 export const Home = () => {
-
     const { data, isLoading, isSuccess, isError, error, refetch } = useGetuserQuery();
-    const [refreshToken, { isSuccess: isRefreshSuccess, isError: isRefreshError }] = useRefreshMutation(); 
+    const [refreshToken, { isSuccess: isRefreshSuccess, isError: isRefreshError }] = useRefreshMutation();
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
 
@@ -21,7 +21,7 @@ export const Home = () => {
     }, [isSuccess]);
 
     useEffect(() => {
-        if (isError && error.status === 401) {
+        if (isError && error.status === 500) {
             refreshToken();
         }
     }, [isError]);
@@ -34,19 +34,19 @@ export const Home = () => {
 
     useEffect(() => {
         if (isRefreshError) {
-            setLoading(false)
+            setLoading(false);
         }
-    }, [isRefreshError])
+    }, [isRefreshError]);
 
     return (
         <>
-            {
-                loading ? <LoaderAnimation /> : 
+            {loading ? <LoaderAnimation /> : 
                 <>
                     <Navbar />
                     <Outlet />
+                    <Footer />
                 </>
             }
         </>
-    )
-}
+    );
+};

@@ -9,6 +9,10 @@ import { Forget } from './pages/client/Registration/Forget';
 import { FEmail } from './pages/client/Registration/Forget/FEmail';
 import { Verify } from './pages/client/Registration/Forget/Verify';
 import { Change } from './pages/client/Registration/Forget/Change';
+import { HomeMain } from './pages/client/Home/Main/HomeMain';
+import { Admin } from './pages/admin';
+import { AdminAuthLoader } from './loader/admin/auth';
+import { UserMain } from './pages/admin/User';
 
 const router = createBrowserRouter([
     {
@@ -51,10 +55,36 @@ const router = createBrowserRouter([
                 path: 'home',
                 element: <Home />,
                 children: [
-                    
+                    {
+                        path: 'a',
+                        element: <HomeMain />
+                    }
                 ]
             }
         ]
+    },
+    {
+        path: '/admin',
+        element: <Admin />,
+        loader: AdminAuthLoader,
+        children: [
+            {
+                path: 'dashboard',
+                element: <h1>Dashboard</h1>
+            },
+            {
+                path: 'users',
+                element: <UserMain />
+            },
+            {
+                path: 'movies',
+                element: <h1>Movies</h1>
+            },
+            {
+                path: 'actors',
+                element: <h1>Actors</h1>
+            }
+        ],
     },
     {
         path: '*',

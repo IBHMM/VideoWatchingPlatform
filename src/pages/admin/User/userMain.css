@@ -1,0 +1,18 @@
+.user-main {
+    padding: 20px;
+  }
+  
+  .password-field {
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-field .ant-input {
+    margin-right: 8px;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  
