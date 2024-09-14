@@ -13,6 +13,7 @@ import { HomeMain } from './pages/client/Home/Main/HomeMain';
 import { Admin } from './pages/admin';
 import { AdminAuthLoader } from './loader/admin/auth';
 import { UserMain } from './pages/admin/User';
+import { MovieMain } from './pages/admin/Movies';
 
 const router = createBrowserRouter([
     {
@@ -78,7 +79,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'movies',
-                element: <h1>Movies</h1>
+                element: <MovieMain />
             },
             {
                 path: 'actors',

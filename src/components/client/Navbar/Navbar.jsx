@@ -18,14 +18,14 @@ export function Navbar() {
         <nav className="flex w-screen items-center justify-center pt-3 pb-3" style={{ background: "rgb(0, 3, 28)" }}>
             <main className='flex items-center justify-between max-[500px]:w-[95%] w-[90%]'>
                 {menu && <Navbar_Menu setMenu={setMenu} />}
-                <div className='flex items-center justify-start'>
+                <div className='flex items-center justify-start gap-[30px]'>
                     <Link to={'/client/home'} className="flex items-center justify-start gap-[1px] cursor-pointer">
                         <img src={logo} alt="" className='w-[70px] h-[60px] max-[500px]:w-[50px] max-[500px]:h-[40px]' />
                         <p className='text-[30px] text-white font-semibold max-[500px]:text-[20px]'>
                             FLICKY
                         </p>
                     </Link>
-                    <div className='flex items-center justify-start gap-[20px] text-white ml-[50px] font-bold cursor-pointer max-[1030px]:hidden'>
+                    <div className='flex items-center justify-start gap-[20px] text-white  font-bold cursor-pointer max-[1030px]:hidden'>
                         <Link to={'/client/home'} className='hover:text-violet-500 text-[12px]'>HOME</Link>
                         <div 
                             className='hover:text-violet-500 flex items-center justify-start gap-[0px] text-[12px]' 

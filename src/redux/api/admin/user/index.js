@@ -4,44 +4,38 @@ export const UserApi = createApi({
     reducerPath: 'userApi',
     baseQuery: fetchBaseQuery({
       baseUrl: 'http://localhost:3000/api/v1/admin',
-      headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
     }),
     tagTypes: ['User'],
     endpoints: (builder) => ({
-      // Get all users
       getAllUsers: builder.query({
         query: () => '/getallusers',
         providesTags: ['User'],
       }),
   
-      // Get a single user by ID
       getUser: builder.query({
         query: (userId) => `/getalluser/${userId}`,
         providesTags: ['User'],
       }),
   
-      // Add a new user
       addUser: builder.mutation({
         query: (formData) => ({
           url: '/adduser',
           method: 'POST',
-          body: { ...formData }
+          body: formData
         }),
         invalidatesTags: ['User'],
       }),
   
-      // Update a user by ID
       updateUser: builder.mutation({
-        query: ({ userId, ...updatedData }) => ({
+        query: ({userId, updatedData}) => ({
           url: `/update/${userId}`,
           method: 'PATCH',
           body: updatedData,
         }),
-        invalidatesTags: (result, error, { userId }) => [{ type: 'User', id: userId }],
+        invalidatesTags: ['User'],
       }),
   
-      // Delete a user by ID
       deleteUser: builder.mutation({
         query: (userId) => ({
           url: `/delete/${userId}`,
@@ -50,7 +44,6 @@ export const UserApi = createApi({
         invalidatesTags: ['User'],
       }),
   
-      // Block a user by ID
       blockUser: builder.mutation({
         query: (userId) => ({
           url: `/block/${userId}`,
@@ -59,7 +52,6 @@ export const UserApi = createApi({
         invalidatesTags: ['User'],
       }),
   
-      // Unblock a user by ID
       unblockUser: builder.mutation({
         query: (userId) => ({
           url: `/unblock/${userId}`,

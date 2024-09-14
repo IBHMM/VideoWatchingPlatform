@@ -21,8 +21,10 @@ export const Home = () => {
     }, [isSuccess]);
 
     useEffect(() => {
-        if (isError && error.status === 500) {
+        if (isError && (error.status === 401)) {
             refreshToken();
+        }else {
+            setLoading(false);
         }
     }, [isError]);
 
