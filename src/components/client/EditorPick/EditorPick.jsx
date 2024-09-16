@@ -16,13 +16,13 @@ export default function EditorPick() {
           pagination={false}
           className="w-full"
           breakpoints={{
-            0:   {slidePreview: 1},
-            300: { slidesPerView: 1},
-            500: { slidesPerView: 2},
-            640: { slidesPerView: 3},
-            768: { slidesPerView: 4},
-            1024: { slidesPerView: 5},
-            1280: { slidesPerView: 6},
+            0: { slidesPerView: 2 },
+            300: { slidesPerView: 2 },
+            500: { slidesPerView: 2 },
+            640: { slidesPerView: 3 },
+            768: { slidesPerView: 4 },
+            1024: { slidesPerView: 5 },
+            1280: { slidesPerView: 6 },
           }}
         >
           {EditorsPick.map((item, index) => (

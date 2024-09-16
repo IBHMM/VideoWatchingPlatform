@@ -1,5 +1,6 @@
 import slide_1 from "../assets/images/Slide-1.jpg";
 import slide_1_logo from "../assets/images/slide_1_logo.png";
+import successtion_ from '../assets/video/successtion.mp4';
 
 export const TrendingMoviesData = [
   {
@@ -70,10 +71,8 @@ export const TrendingMoviesData = [
 
 export const Successtion = {
   name: "Friend Zone",
-  score: 6.8,
-  year: 2020,
-  poster:
-    "https://occ-0-8407-2219.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABaCpJtEhuQzW0-_KC3EcdrKZwRokoOOQOXx1jq599l1JQSNSY5M-SyeEIjPR0EZD0e0Kg_Iac-zso49i-g6GLOzb-5cE7QkfS_gI.jpg?r=8fa",
+  year: "2023",
+  video: successtion_,
   genre: "Comedy, Drama, Romance",
   duration: "1h 58m",
   description:
@@ -202,10 +201,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/john-wich-288x400.jpg",
     genre: "Action, Crime, Thriller",
     duration: "1h 49m",
-    description: "John Wich returns for another adrenaline-pumping adventure as he battles new foes and uncovers deeper conspiracies. Expect intense action sequences and thrilling moments.",
-    actors: ["Keanu Reeves", "Laurence Fishburne"],
-    crew: ["Chad Stahelski (Director)", "Derek Kolstad (Writer)"],
-    imdb: "8.2"
+    description:
+      "John Wich returns for another adrenaline-pumping adventure as he battles new foes and uncovers deeper conspiracies.",
+    actors: ["Keanu Reeves"],
+    crew: ["Chad Stahelski"],
+    imdb: "8.2",
+    language: "English"
   },
   {
     id: 2,
@@ -215,10 +216,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/spider_ex-288x400.jpg",
     genre: "Action, Adventure, Fantasy",
     duration: "2h 28m",
-    description: "Spider-Man faces a new villain threatening to alter the fabric of reality. With high-stakes battles and a gripping storyline, Spider-Man Memo is a must-watch for fans of the superhero genre.",
-    actors: ["Tom Holland", "Zendaya"],
-    crew: ["Jon Watts (Director)", "Chris McKenna (Writer)"],
-    imdb: "8.0"
+    description:
+      "Spider-Man faces a new villain threatening to alter the fabric of reality. With high-stakes battles and a gripping storyline.",
+    actors: ["Tom Holland"],
+    crew: ["Jon Watts"],
+    imdb: "8.0",
+    language: "English"
   },
   {
     id: 3,
@@ -228,10 +231,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/house-down-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
-    description: "A comedic yet heartfelt story set in the White House. Follow the quirky and romantic escapades of the staff as they navigate the highs and lows of their unusual workplace.",
-    actors: ["Anna Kendrick", "Chris Pratt"],
-    crew: ["Michael Schur (Director)", "Leslie Odom Jr. (Writer)"],
-    imdb: "7.5"
+    description:
+      "A comedic yet heartfelt story set in the White House. Follow the quirky and romantic escapades.",
+    actors: ["Anna Kendrick"],
+    crew: ["Michael Schur"],
+    imdb: "7.5",
+    language: "English"
   },
   {
     id: 4,
@@ -241,10 +246,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/the_post-288x400.jpg",
     genre: "Drama, Mystery, Thriller",
     duration: "1h 57m",
-    description: "A gripping drama that follows a newspaper's fight to expose a high-level conspiracy. With intense moments and deep political intrigue, this film will keep you on the edge of your seat.",
-    actors: ["Meryl Streep", "Tom Hanks"],
-    crew: ["Steven Spielberg (Director)", "Josh Singer (Writer)"],
-    imdb: "8.1"
+    description:
+      "A gripping drama that follows a newspaper's fight to expose a high-level conspiracy. With intense moments and deep political intrigue",
+    actors: ["Meryl Streep"],
+    crew: ["Steven Spielberg"],
+    imdb: "8.1",
+    language: "English"
   },
   {
     id: 5,
@@ -254,10 +261,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/girl_best-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
-    description: "A heartwarming tale of a young woman navigating the challenges of life and love. With humor and emotional depth, 'Wide Girl' offers a refreshing take on relationships and personal growth.",
-    actors: ["Emma Stone", "Ryan Gosling"],
-    crew: ["David O. Russell (Director)", "Annie Mumolo (Writer)"],
-    imdb: "7.8"
+    description:
+      "A heartwarming tale of a young woman navigating the challenges of life and love. With humor and emotional depth",
+    actors: ["Emma Stone"],
+    crew: ["David O. Russell"],
+    imdb: "7.8",
+    language: "English"
   },
   {
     id: 6,
@@ -267,10 +276,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/good-doctor-288x400.jpg",
     genre: "Drama, Mystery, Sci-Fi",
     duration: "1h 58m",
-    description: "A doctor with extraordinary abilities faces moral and scientific dilemmas as he uncovers hidden truths in a futuristic world. This film blends medical drama with speculative science fiction.",
-    actors: ["Freddie Highmore", "Antonia Thomas"],
-    crew: ["Mike Schur (Director)", "David Shore (Writer)"],
-    imdb: "7.9"
+    description:
+      "A doctor with extraordinary abilities faces moral and scientific dilemmas as he uncovers hidden truths in a futuristic world.",
+    actors: ["Freddie Highmore"],
+    crew: ["Mike Schur"],
+    imdb: "7.9",
+    language: "English"
   },
   {
     id: 7,
@@ -280,10 +291,12 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/best-frenit-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
-    description: "A delightful film about friendship and romance, exploring how close bonds can evolve into something deeper. Filled with humor and heartfelt moments, it's a story of finding love in unexpected places.",
-    actors: ["Jennifer Lawrence", "Bradley Cooper"],
-    crew: ["Paul Feig (Director)", "Greg Mottola (Writer)"],
-    imdb: "7.7"
+    description:
+      "A delightful film about friendship and romance, exploring how close bonds can evolve into something deeper. Filled with humor and heartfelt moments",
+    actors: ["Jennifer Lawrence"],
+    crew: ["Paul Feig"],
+    imdb: "7.7",
+    language: "English"
   },
   {
     id: 8,
@@ -293,9 +306,11 @@ export const NewReleased = [
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/movies6-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
-    description: "A charming romantic comedy about two friends who struggle with their feelings for each other. As their relationship evolves, they navigate the complexities of love and friendship.",
-    actors: ["Kurt Russell", "Goldie Hawn"],
-    crew: ["Nancy Meyers (Director)", "Charles Shyer (Writer)"],
-    imdb: "7.6"
-  },
+    description:
+      "A charming romantic comedy about two friends who struggle with their feelings for each other. As their relationship evolves",
+    actors: ["Kurt Russell"],
+    crew: ["Nancy Meyers"],
+    imdb: "7.6",
+    language: "English"
+  }
 ];

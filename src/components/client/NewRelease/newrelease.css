@@ -1,0 +1,12 @@
+@keyframes opening {
+    from {
+        transform: translateY(-400px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
+.informationscontainer {
+    animation: opening ease-in-out 0.5s;
+}
