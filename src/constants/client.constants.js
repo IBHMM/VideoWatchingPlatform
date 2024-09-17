@@ -1,6 +1,7 @@
 import slide_1 from "../assets/images/Slide-1.jpg";
 import slide_1_logo from "../assets/images/slide_1_logo.png";
 import successtion_ from '../assets/video/successtion.mp4';
+import friendzone from '../assets/images/friendzone.jpg'
 
 export const TrendingMoviesData = [
   {
@@ -73,6 +74,7 @@ export const Successtion = {
   name: "Friend Zone",
   year: "2023",
   video: successtion_,
+  poster: friendzone,
   genre: "Comedy, Drama, Romance",
   duration: "1h 58m",
   description:
