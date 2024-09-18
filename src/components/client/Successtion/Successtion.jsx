@@ -3,7 +3,7 @@ import { FaStar, FaVolumeMute, FaVolumeUp } from 'react-icons/fa';
 import { useEffect, useRef, useState } from 'react';
 
 export function Succession() {
-    const [muted, setMuted] = useState(true); // Start muted for autoplay
+    const [muted, setMuted] = useState(true); 
     const videoRef = useRef(null);
 
     useEffect(() => {

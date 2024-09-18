@@ -1,7 +1,11 @@
 import { Categories } from "../../../../components/client/Category/Categories";
 import EditorPick from "../../../../components/client/EditorPick/EditorPick";
+import { Features } from "../../../../components/client/Features/Features";
 import { Header } from "../../../../components/client/Header/Header";
+import { MegaSales } from "../../../../components/client/MegaSales/MegaSales";
 import { NewRelease } from "../../../../components/client/NewRelease/NewRelease";
+import { Populargames } from "../../../../components/client/PopularGames/Populargames";
+import { Subscription } from "../../../../components/client/Subscription/Subscription";
 import { Succession } from "../../../../components/client/Successtion/Successtion";
 import { TrendingMovies } from "../../../../components/client/Trending/TrendingMovies";
 
@@ -15,6 +19,10 @@ export function HomeMain() {
             <EditorPick />
             <Categories />
             <NewRelease />
+            <MegaSales />
+            <Populargames />
+            <Features />
+            <Subscription />
         </>
     )
 } 

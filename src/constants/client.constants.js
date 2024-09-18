@@ -3,6 +3,12 @@ import slide_1_logo from "../assets/images/slide_1_logo.png";
 import successtion_ from '../assets/video/successtion.mp4';
 import friendzone from '../assets/images/friendzone.jpg'
 
+import icon1 from '../assets/icons/Features_1.svg';
+import icon2 from '../assets/icons/Features_2.svg';
+import icon3 from '../assets/icons/Features_3.svg';
+import icon4 from '../assets/icons/Features_4.svg';
+
+
 export const TrendingMoviesData = [
   {
     name: "John Wich 4",
@@ -316,3 +322,87 @@ export const NewReleased = [
     language: "English"
   }
 ];
+
+export const megasales = [
+  {
+    header: "The Last Sacrifice",
+    code: "S01E04",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/03/israel-palacio-IprD0z0zqss-unsplash-540x330.jpg"
+  },
+  {
+    header: "No One",
+    code: "S01E04",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/sander-sammy-Wjzt14n812A-unsplash-540x330.jpg",
+  },
+  {
+    header: "No Star Forever",
+    code: "S01E04",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/alexander-jawfox-R_6kw7NUTLY-unsplash-540x330.jpg",
+  }
+]
+
+export const PopularGenres = [
+  {
+    name: "School",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/allison-griffith-Q76DPRQ3Ix0-unsplash-330x180.jpg"
+  },
+  {
+    name: "Romance",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/oziel-gomez-L8-0SAy-aoQ-330x180.jpg"
+  },
+  {
+    name: "Reality",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/colin-lloyd-iTzUDUjeOj4-unsplash-330x180.jpg"
+  },
+  {
+    name: "Music",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/matt-botsford-OK-330x180.jpg"
+  },
+  {
+    name: "International",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/vicky-hladynets-GRyMX-330x180.jpg"
+  },
+  {
+    name: "Family",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/kelly-sikkema-FqqaJI9OxMI-unsplash-330x180.jpg"
+  },
+  {
+    name: "Drama",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/aditya-ali-HGpfvykcI5U-unsplash-330x180.jpg"
+  },
+  {
+    name: "Cooking",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/monika-grabkowska-jsgJtBOR6jY-unsplash-330x180.jpg"
+  },
+  {
+    name: "Anime",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/aaron-cass-GJuhDRbMj7g-unsplash-330x180.jpg"
+  },
+  {
+    name: "Comedy",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/call-me-fred-330x180.jpg"
+  },
+  {
+    name: "Action",
+    image: "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/joe-neric-Zsqbptb_j-Y-unsplash-330x180.jpg"
+  },
+]
+
+export const features_ = [
+  {
+    name: "Thousands of documentaties",
+    icon: icon1,
+  },
+  {
+    name: "Award-winning exclusive & originals",
+    icon: icon2,
+  },
+  {
+    name: "Watch anytime, anywhere",
+    icon: icon3,
+  },
+  {
+    name: "Cancel your plan anytime",
+    icon: icon4,
+  },
+]
