@@ -28,7 +28,7 @@ export function Succession() {
     };
 
     return (
-        <div className="flex items-center justify-center w-full mt-[30px]">
+        <div className="flex items-center justify-center w-full mt-[30px] max-w-[2000px]">
             <div className='flex items-center justify-between w-[90%] gap-[30px] max-[1000px]:flex-col mt-[100px]'>
 
                 <div className="relative w-[60%] h-auto max-[1000px]:w-full">

@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Subscription() {
     return (
-        <div className="relative flex items-center justify-center w-full">
+        <div className="relative flex items-center justify-center w-full max-w-[2000px]">
             <div className="relative flex flex-col items-center justify-center w-[90%] gap-20 py-10 rounded-xl text-white">
                 
                 <div className='flex items-center justify-center gap-3 flex-col'>
@@ -14,7 +14,7 @@ export function Subscription() {
                     </p>
                 </div>
 
-                <div className='flex items-center justify-center gap-1'>
+                <div className='flex items-center justify-center gap-1 flex-wrap'>
                     
                     <div className='flex flex-col items-center p-10 rounded-lg shadow-lg w-[300px]'>
                         <div className='flex flex-col items-center justify-center mb-6'>

@@ -1,0 +1,58 @@
+.container__ {
+    background: linear-gradient(90deg, rgb(39, 22, 126) 7%, rgba(0, 3, 28, 0.42) 100%), url("https://streamvid.gavencreative.com/wp-content/uploads/2023/02/bg_multi_movies.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+button.subscribe-button {
+    background-color: rgb(108, 82, 238);
+    background-image: linear-gradient(248.28deg, rgb(158, 97, 255) 9.54%, rgba(142, 97, 255, 0) 32.8%), 
+                      radial-gradient(81.71% 279.87% at -16.57% -92%, rgb(97, 155, 255) 28.69%, rgba(205, 219, 248, 0) 69.54%);
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Metropolitano, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 50px;
+    padding: 15px 31px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease, transform 0.2s ease;
+    width: 184px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    background-size: 200% 200%;
+}
+
+button.subscribe-button:hover {
+    background-position: right center;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+button.subscribe-button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+    background-position: left center;
+}
+
+button.subscribe-button::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    z-index: -1;
+    border-radius: 14px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+button.subscribe-button:hover::before {
+    opacity: 1;
+}

@@ -15,7 +15,7 @@ export function Navbar() {
     const [featuresVisible, setFeaturesVisible] = useState(false);
 
     return (
-        <nav className="flex w-screen items-center justify-center pt-3 pb-3" style={{ background: "rgb(0, 3, 28)" }}>
+        <nav className="flex w-screen items-center justify-center pt-3 pb-3 max-w-[2000px]" style={{ background: "rgb(0, 3, 28)" }}>
             <main className='flex items-center justify-between max-[500px]:w-[95%] w-[90%]'>
                 {menu && <Navbar_Menu setMenu={setMenu} />}
                 <div className='flex items-center justify-start gap-[30px]'>
@@ -65,7 +65,7 @@ export function Navbar() {
                         alt="" 
                         className='w-[20px] h-[20px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90 hidden max-[1030px]:flex' 
                     />
-                    <button className='subscribe-button'>
+                    <button className='subscribe-button max-[1030px]:hidden'>
                         Subscribe
                     </button>
                 </div>

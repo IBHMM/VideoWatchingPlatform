@@ -8,7 +8,7 @@ export function Header() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className='relative flex items-center justify-center w-full mb-[100px] mt-[30px]'>
+    <div className='relative flex items-center justify-center w-full mb-[100px] mt-[30px] max-w-[2000px]'>
       <div className='relative flex flex-col items-center justify-center w-[90%] bg-[rgb(0, 3, 28)]'>
         <Swiper
           spaceBetween={10}

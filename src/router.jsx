@@ -14,6 +14,7 @@ import { Admin } from './pages/admin';
 import { AdminAuthLoader } from './loader/admin/auth';
 import { UserMain } from './pages/admin/User';
 import { MovieMain } from './pages/admin/Movies';
+import { Profile } from './pages/client/Home/Profile/ProfileMain';
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
                     {
                         path: 'a',
                         element: <HomeMain />
+                    },
+                    {
+                        path: 'profile',
+                        element: <Profile />
                     }
                 ]
             }

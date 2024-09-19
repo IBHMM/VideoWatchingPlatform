@@ -1,12 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { TrendingMoviesData } from '../../../constants/client.constants';
-import 'swiper/css';
-import 'swiper/css/free-mode';
 import { FaPlay } from 'react-icons/fa'; 
 
 export function TrendingMovies() {
     return (
-        <div className="flex items-center justify-center w-full">
+        <div className="flex items-center justify-center w-full max-w-[2000px]">
             <div className='flex flex-col items-start justify-start w-full sm:w-[90%] mt-[30px] gap-[30px]'>
                 <h1 className="font-semibold text-[16px] text-white">
                     Trending Movies
@@ -18,8 +16,6 @@ export function TrendingMovies() {
                     pagination={false}
                     className="w-full"
                     breakpoints={{
-                        0:   {slidePreview: 1},
-                        300: { slidesPerView: 1},
                         500: { slidesPerView: 2},
                         640: { slidesPerView: 3},
                         768: { slidesPerView: 4},

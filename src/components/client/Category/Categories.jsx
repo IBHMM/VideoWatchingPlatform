@@ -5,7 +5,7 @@ export const Categories = () => {
 
 
     return (
-        <div className="relative flex items-center justify-center w-full my-24">
+        <div className="relative flex items-center justify-center w-full my-10 max-w-[2000px]">
             <div className="relative flex flex-col items-start justify-center w-[90%] bg-[#00031c] gap-8 rounded-lg">
                 <h1 className="font-semibold text-lg text-white mt-4">Editor's Pick</h1>
                 

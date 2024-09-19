@@ -1,32 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Btn_main } from "../components/client/Layout/Items/Buttons/Btn_main";
 
 export function ErrorSection7() {
   return (
-    <div className="h-screen grid place-items-center text-center px-8">
-      <div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          className="w-20 h-20 mx-auto"
-        >
-          <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-18a1 1 0 100 2 1 1 0 000-2zm1 14h-2v-8h2v8z" />
-        </svg>
-        <h1 className="mt-10 text-3xl leading-snug text-blue-gray-700 md:text-4xl">
-          Error 404 <br /> It looks like something went wrong.
-        </h1>
-        <p className="mt-8 mb-14 text-[18px] font-normal text-gray-500 mx-auto md:max-w-sm">
-          Don&apos;t worry, our team is already on it. Please try refreshing the
-          page or come back later.
-        </p>
-        <Link 
-          to={"/client/home"}
-          className="w-full px-4 py-2 bg-gray-500 text-white rounded-md md:w-[8rem]"
-        >
-          Back Home
-        </Link>
-      </div>
+    <div className="h-screen w-screen flex flex-col items-center justify-center text-center px-4">
+      <img 
+        src="https://streamvid.gavencreative.com/wp-content/uploads/2023/04/404.png" 
+        alt="404 Error" 
+        className="mb-10 w-96 max-w-full" 
+      />
+      <p className="text-semibold text-white text-2xl sm:text-3xl">
+        Oops! This page can’t be found anywhere.
+      </p>
+      <p className="text-semibold text-gray-500 text-base sm:text-lg mt-2"> 
+        The page you are looking for doesn’t exist or has been moved.
+      </p>
+
+      <Link to={"/client/home/a"} className="mt-10 w-full sm:w-auto">
+        <Btn_main text="Back to Home"/>
+      </Link>
     </div>
   );
 }

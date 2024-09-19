@@ -8,7 +8,7 @@ import { LoaderAnimation } from "../../../components/client/Layout/Animation/Pag
 import { Footer } from "../../../components/client/Footer/Footer";
 
 export const Home = () => {
-    const { data, isLoading, isSuccess, isError, error, refetch } = useGetuserQuery();
+    const { data, isSuccess, isError, error, refetch } = useGetuserQuery();
     const [refreshToken, { isSuccess: isRefreshSuccess, isError: isRefreshError }] = useRefreshMutation();
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(true);
@@ -43,11 +43,11 @@ export const Home = () => {
     return (
         <>
             {loading ? <LoaderAnimation /> : 
-                <>
+                <div className="flex flex-col items-center justify-center">
                     <Navbar />
                     <Outlet />
                     <Footer />
-                </>
+                </div>
             }
         </>
     );

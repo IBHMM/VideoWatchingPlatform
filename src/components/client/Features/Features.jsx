@@ -9,8 +9,8 @@ export function Features() {
     }, []);
 
     return (
-        <div className="relative flex items-center justify-center w-full my-24">
-            <div className="relative flex items-center justify-center w-[90%] gap-20 py-20 rounded-xl" style={{
+        <div className="relative flex items-center justify-center w-full my-24 max-w-[2000px]">
+            <div className="relative flex items-center justify-center w-[90%] gap-20 py-20 rounded-xl max-[700px]:flex-col" style={{
                 background: "rgb(123, 97, 255)"
             }}>
 

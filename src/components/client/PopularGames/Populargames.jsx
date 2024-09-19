@@ -5,7 +5,7 @@ import 'swiper/css'; // Ensure you import Swiper styles
 export function Populargames () {
 
     return (
-        <div className="relative flex items-center justify-center w-full my-24">
+        <div className="relative flex items-center justify-center w-full my-24 max-w-[2000px]">
             <div className="relative flex flex-col items-start justify-center w-[90%] bg-[#00031c] gap-8 rounded-lg">
                 
                 <h1 className="font-semibold text-lg text-white mt-4">Popular Genres</h1>
