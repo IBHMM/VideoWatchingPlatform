@@ -4,7 +4,7 @@ import { Features } from "../../../../components/client/Features/Features";
 import { Header } from "../../../../components/client/Header/Header";
 import { MegaSales } from "../../../../components/client/MegaSales/MegaSales";
 import { NewRelease } from "../../../../components/client/NewRelease/NewRelease";
-import { Populargames } from "../../../../components/client/PopularGames/Populargames";
+import { PopularGenres } from "../../../../components/client/PopularGames/PopularGenres";
 import Questions from "../../../../components/client/Questions/Questions";
 import { Subscription } from "../../../../components/client/Subscription/Subscription";
 import { Succession } from "../../../../components/client/Successtion/Successtion";
@@ -22,7 +22,7 @@ export function HomeMain() {
             <Categories />
             <NewRelease />
             <MegaSales />
-            <Populargames />
+            <PopularGenres />
             <Features />
             <Subscription />
             <Trial />

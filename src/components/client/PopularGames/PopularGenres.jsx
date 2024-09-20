@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { PopularGenres } from "../../../constants/client.constants";
-import 'swiper/css'; // Ensure you import Swiper styles
+import { PopularGenres as populargenres } from "../../../constants/client.constants";
+import 'swiper/css'; 
 
-export function Populargames () {
+export function PopularGenres () {
 
     return (
         <div className="relative flex items-center justify-center w-full my-24 max-w-[2000px]">
@@ -16,7 +16,7 @@ export function Populargames () {
                     breakpoints={{
                         320: {
                             slidesPerView: 2,
-                            spaceBetween: 10,
+                            spaceBetween: 10
                         },
                         480: {
                             slidesPerView: 3,
@@ -33,7 +33,7 @@ export function Populargames () {
                     }}
                 >
                     {
-                        PopularGenres.map((genre, index) => (
+                        populargenres.map((genre, index) => (
                             <SwiperSlide key={index} className="flex justify-center items-center">
                                 <img src={genre.image} alt={genre.name} className="w-full h-full rounded-md hover:scale-105 transition-all duration-300 " />
                                 <div className="absolute text-white text-lg font-semibold px-2 py-1 rounded-b-md">

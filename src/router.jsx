@@ -63,7 +63,29 @@ const router = createBrowserRouter([
                     },
                     {
                         path: 'profile',
-                        element: <Profile />
+                        element: <Profile />,
+                        children: [
+                            {
+                                path: 'favourite',
+                                element: <h1>Favourite</h1>
+                            },
+                            {
+                                path: 'history',
+                                element: <h1>History</h1>
+                            },
+                            {
+                                path: 'playlist',
+                                element: <h1>Playlist</h1>
+                            },
+                            {
+                                path: 'watchlist',
+                                element: <h1>Watchlist</h1>
+                            },
+                            {
+                                path: 'edit',
+                                element: <h1>Edit</h1>
+                            }
+                        ]
                     }
                 ]
             }

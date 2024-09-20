@@ -9,9 +9,11 @@ import './navbar.css';
 import { useEffect, useRef, useState } from 'react';
 import { Navbar_Menu } from './Navbar_Menu';
 import { Btn_main } from '../Layout/Items/Buttons/Btn_main';
+import ProfileDropDown from './Profile_Drop_Down';
 
 export function Navbar() {
     const user = useSelector(store => store.user.user);
+    const [Profile, setProfile] = useState(false);
     const [menu, setMenu] = useState(false); 
     const [featuresVisible, setFeaturesVisible] = useState(false);
 
@@ -55,7 +57,7 @@ export function Navbar() {
                                 <p className='text-white text-[12px] font-semibold'>Login</p>
                                 <img src={person} alt="" className='w-[27px] h-[27px]' />
                             </Link> :
-                            <img src={user.thumbnail} alt='user profile picture' className='w-[27px] h-[27px] rounded-full cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90' />
+                            <ProfileDropDown image={user.thumbnail} username={user.username}/>
                         }
                     </div>
                     <img 
