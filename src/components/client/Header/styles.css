@@ -114,14 +114,20 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80px; 
+    width: 200px; 
   }
 
   .custom-button {
     padding: 0;
-    /* padding-bottom: 5px;
-    padding-left: 21px;
-    padding-right: 21px;
-    padding-top: 5px; */
+    
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px; 
   }
 }

@@ -19,13 +19,13 @@ export function Header() {
             disableOnInteraction: false,
           }}
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)} 
-          className="mySwiper"
+          className=""
         >
           {headerCarousel.map((slide, index) => (
-            <SwiperSlide key={index} className="relative min-h-[300px] ">
-              <img src={slide.poster} alt={`Slide ${index}`} className="w-full min-h-[300px]" />
+            <SwiperSlide key={index} className="relative h-[600px] overflow-hidden">
+              <img src={slide.poster} alt={`Slide ${index}`} className="w-full h-full object-contains min-w-[1000px]" />
 
-              <div className="absolute bottom-0 left-20 h-full flex flex-col items-center space-y-4 justify-center gap-[20px]">
+              <div className="absolute bottom-0 left-20 h-full flex flex-col items-center space-y-4 justify-center gap-[20px] max-[1000px]:w-full max-[1000px]:left-0">
                 <p className={`text-white text-2xl max-[700px]:text-xl font-semibold ${activeIndex === index ? 'animate-slide-in' : ''}`}>
                   Words digital primer
                 </p>

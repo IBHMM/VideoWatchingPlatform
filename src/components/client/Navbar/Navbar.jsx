@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux';
 import './navbar.css';
 import { useEffect, useRef, useState } from 'react';
 import { Navbar_Menu } from './Navbar_Menu';
+import { Btn_main } from '../Layout/Items/Buttons/Btn_main';
 
 export function Navbar() {
     const user = useSelector(store => store.user.user);
@@ -20,7 +21,7 @@ export function Navbar() {
                 {menu && <Navbar_Menu setMenu={setMenu} />}
                 <div className='flex items-center justify-start gap-[30px]'>
                     <Link to={'/client/home'} className="flex items-center justify-start gap-[1px] cursor-pointer">
-                        <img src={logo} alt="" className='w-[70px] h-[60px] max-[500px]:w-[50px] max-[500px]:h-[40px]' />
+                        <img src={logo} alt="" className='mr-1' />
                         <p className='text-[30px] text-white font-semibold max-[500px]:text-[20px]'>
                             FLICKY
                         </p>
@@ -33,7 +34,6 @@ export function Navbar() {
                             onClick={() => setFeaturesVisible(!featuresVisible)}
                         >
                             FEATURES 
-                            <img src={arrow} alt="" className='hover:text-violet-500 w-[23px] h-[23px] mt-[-2px]' />
                         </div>
                         {featuresVisible && <Features />}
                         <div className='hover:text-violet-500 text-[12px]'>
@@ -65,9 +65,9 @@ export function Navbar() {
                         alt="" 
                         className='w-[20px] h-[20px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90 hidden max-[1030px]:flex' 
                     />
-                    <button className='subscribe-button max-[1030px]:hidden'>
-                        Subscribe
-                    </button>
+                    <Link className='max-[1030px]:hidden'>
+                        <Btn_main text={"Subscribe"}/>
+                    </Link>
                 </div>
             </main>
         </nav>
