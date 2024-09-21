@@ -18,7 +18,7 @@ export function Settings() {
                             />
                             <p className="text-[130%] text-white">{user?.username || "Anonymous"}</p>
                         </div>
-                        <button className="flex items-center gap-2 px-4 py-2 text-white font-semibold rounded-lg bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg hover:shadow-pink-500/50 hover:scale-105 transform transition duration-300 ease-out">
+                        <button className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold rounded-lg hover:scale-105 transform transition duration-300 ease-out hover:from-purple-600 hover:to-indigo-700">
                             <AiFillEdit size={15} />
                             <span className="text-[15px]">Edit</span>
                         </button>
