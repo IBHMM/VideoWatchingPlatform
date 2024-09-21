@@ -15,6 +15,7 @@ import { AdminAuthLoader } from './loader/admin/auth';
 import { UserMain } from './pages/admin/User';
 import { MovieMain } from './pages/admin/Movies';
 import { Profile } from './pages/client/Home/Profile/ProfileMain';
+import { Settings } from './components/client/Profile/Settings/Settings';
 
 const router = createBrowserRouter([
     {
@@ -82,8 +83,8 @@ const router = createBrowserRouter([
                                 element: <h1>Watchlist</h1>
                             },
                             {
-                                path: 'edit',
-                                element: <h1>Edit</h1>
+                                path: 'settings',
+                                element: <Settings />
                             }
                         ]
                     }
