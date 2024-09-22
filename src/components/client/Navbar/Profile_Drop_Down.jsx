@@ -29,7 +29,7 @@ const ProfileDropDown = ({ image, username }) => {
 
   const handleLogout = async () => {
     try {
-      await logout()
+      logout()
     } catch (error) {
       console.error("Failed to logout", error);
     }

@@ -16,6 +16,8 @@ import { UserMain } from './pages/admin/User';
 import { MovieMain } from './pages/admin/Movies';
 import { Profile } from './pages/client/Home/Profile/ProfileMain';
 import { Settings } from './components/client/Profile/Settings/Settings';
+import { Plans } from './components/client/Plans/Plans';
+import { Billing } from './components/client/Plans/Billing/Billing';
 
 const router = createBrowserRouter([
     {
@@ -87,6 +89,14 @@ const router = createBrowserRouter([
                                 element: <Settings />
                             }
                         ]
+                    },
+                    {
+                        path: "plans",
+                        element: <Plans />
+                    },
+                    {
+                        path: "billing",
+                        element: <Billing />
                     }
                 ]
             }

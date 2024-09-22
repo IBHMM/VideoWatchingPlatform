@@ -8,6 +8,7 @@ export const FEmail = () => {
 
     const [GetCode, {data, isLoading, isError, isSuccess}] = useGetcodeMutation();
     const navigate = useNavigate();
+    const email = localStorage.getItem('emailfromprofile');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -20,6 +21,7 @@ export const FEmail = () => {
         if (isSuccess) {
             message.success("Check your email for verification code.");
             localStorage.setItem('email', data.email);
+            localStorage.removeItem("emailfromprofile")
             navigate(`/client/registration/forget/verify`);
         }
     }, [isSuccess]);
@@ -48,6 +50,7 @@ export const FEmail = () => {
                             type="email"
                             id="email"
                             name="email"
+                            value={email ? email : ""}
                             className={`mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 ${
                                 isError ? "border-red-600" : ""
                             }`}

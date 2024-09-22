@@ -15,7 +15,7 @@ export const Home = () => {
 
     useEffect(() => {
         if (isSuccess) {
-            dispatch(setUser(data));
+            dispatch(setUser(data.user));
             setLoading(false);
         }
     }, [isSuccess]);
