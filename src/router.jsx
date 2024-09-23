@@ -18,6 +18,7 @@ import { Profile } from './pages/client/Home/Profile/ProfileMain';
 import { Settings } from './components/client/Profile/Settings/Settings';
 import { Plans } from './components/client/Plans/Plans';
 import { Billing } from './components/client/Plans/Billing/Billing';
+import { VideoMain } from './pages/client/Home/Movie/VideoMain';
 
 const router = createBrowserRouter([
     {
@@ -97,7 +98,11 @@ const router = createBrowserRouter([
                     {
                         path: "billing",
                         element: <Billing />
-                    }
+                    },
+                    {
+                        path: 'video/:movieid',
+                        element: <VideoMain />
+                    },
                 ]
             }
         ]

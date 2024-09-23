@@ -1,6 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { TrendingMoviesData } from '../../../constants/client.constants';
 import { FaPlay } from 'react-icons/fa'; 
+import { Link } from 'react-router-dom';
 
 
 export const TrendingMovies = () => {
@@ -41,7 +42,7 @@ export const TrendingMovies = () => {
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className="text-white group relative">
+        <Link to={`/client/home/video/${movie.id}`} className="text-white group relative">
             <span className='relative flex items-center justify-center'>
                 <img src={movie.poster} alt={movie.name} className='w-full h-[90%] object-conver'/>
                 
@@ -55,6 +56,6 @@ const MovieCard = ({ movie }) => {
                 <p className="text-sm text-gray-400 max-[500px]:text-[11px]">Duration: {movie.duration}</p>
                 <p className="text-sm text-gray-400 max-[500px]:text-[11px]">{movie.year} • {movie.genre}</p>
             </div>
-        </div>
+        </Link>
     );
 };

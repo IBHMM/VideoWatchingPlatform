@@ -9,8 +9,10 @@ import icon3 from '../assets/icons/Features_3.svg';
 import icon4 from '../assets/icons/Features_4.svg';
 
 
+
 export const TrendingMoviesData = [
   {
+    id: 1,
     name: "John Wich 4",
     year: "2023",
     poster:
@@ -19,6 +21,7 @@ export const TrendingMoviesData = [
     duration: "1h 49m",
   },
   {
+    id: 2,
     name: "Spider Man Memo",
     year: "2023",
     poster:
@@ -27,6 +30,7 @@ export const TrendingMoviesData = [
     duration: "2h 28m",
   },
   {
+    id: 3,
     name: "The White House",
     year: "2023",
     poster:
@@ -35,6 +39,7 @@ export const TrendingMoviesData = [
     duration: "1h 58m",
   },
   {
+    id: 4,
     name: "The Post",
     year: "2023",
     poster:
@@ -43,6 +48,7 @@ export const TrendingMoviesData = [
     duration: "1h 57m",
   },
   {
+    id: 5,
     name: "Wide Girl",
     year: "2023",
     poster:
@@ -51,6 +57,7 @@ export const TrendingMoviesData = [
     duration: "1h 58m",
   },
   {
+    id: 6,
     name: "The Good Doctor",
     year: "2023",
     poster:
@@ -59,6 +66,7 @@ export const TrendingMoviesData = [
     duration: "1h 58m",
   },
   {
+    id: 7,
     name: "Best Friend",
     year: "2023",
     poster:
@@ -67,6 +75,7 @@ export const TrendingMoviesData = [
     duration: "1h 58m",
   },
   {
+    id: 8,
     name: "Friend Zone",
     year: "2023",
     poster:
@@ -214,7 +223,8 @@ export const NewReleased = [
     actors: ["Keanu Reeves"],
     crew: ["Chad Stahelski"],
     imdb: "8.2",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 2,
@@ -229,7 +239,8 @@ export const NewReleased = [
     actors: ["Tom Holland"],
     crew: ["Jon Watts"],
     imdb: "8.0",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 3,
@@ -244,7 +255,8 @@ export const NewReleased = [
     actors: ["Anna Kendrick"],
     crew: ["Michael Schur"],
     imdb: "7.5",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 4,
@@ -259,7 +271,8 @@ export const NewReleased = [
     actors: ["Meryl Streep"],
     crew: ["Steven Spielberg"],
     imdb: "8.1",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 5,
@@ -274,7 +287,8 @@ export const NewReleased = [
     actors: ["Emma Stone"],
     crew: ["David O. Russell"],
     imdb: "7.8",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 6,
@@ -289,7 +303,8 @@ export const NewReleased = [
     actors: ["Freddie Highmore"],
     crew: ["Mike Schur"],
     imdb: "7.9",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 7,
@@ -304,7 +319,8 @@ export const NewReleased = [
     actors: ["Jennifer Lawrence"],
     crew: ["Paul Feig"],
     imdb: "7.7",
-    language: "English"
+    language: "English",
+    video: successtion_
   },
   {
     id: 8,
@@ -319,7 +335,8 @@ export const NewReleased = [
     actors: ["Kurt Russell"],
     crew: ["Nancy Meyers"],
     imdb: "7.6",
-    language: "English"
+    language: "English",
+    video: successtion_
   }
 ];
 
@@ -406,3 +423,134 @@ export const features_ = [
     icon: icon4,
   },
 ]
+
+export const Videos =  [
+  {
+    id: 1,
+    name: "John Wich 4",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/john-wich-288x400.jpg",
+    genre: "Action, Crime, Thriller",
+    duration: "1h 49m",
+    description:
+      "John Wich returns for another adrenaline-pumping adventure as he battles new foes and uncovers deeper conspiracies.",
+    actors: ["Keanu Reeves"],
+    crew: ["Chad Stahelski"],
+    imdb: "8.2",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 2,
+    name: "Spider Man Memo",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/spider_ex-288x400.jpg",
+    genre: "Action, Adventure, Fantasy",
+    duration: "2h 28m",
+    description:
+      "Spider-Man faces a new villain threatening to alter the fabric of reality. With high-stakes battles and a gripping storyline.",
+    actors: ["Tom Holland"],
+    crew: ["Jon Watts"],
+    imdb: "8.0",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 3,
+    name: "The White House",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/house-down-288x400.jpg",
+    genre: "Comedy, Drama, Romance",
+    duration: "1h 58m",
+    description:
+      "A comedic yet heartfelt story set in the White House. Follow the quirky and romantic escapades.",
+    actors: ["Anna Kendrick"],
+    crew: ["Michael Schur"],
+    imdb: "7.5",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 4,
+    name: "The Post",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/the_post-288x400.jpg",
+    genre: "Drama, Mystery, Thriller",
+    duration: "1h 57m",
+    description:
+      "A gripping drama that follows a newspaper's fight to expose a high-level conspiracy. With intense moments and deep political intrigue",
+    actors: ["Meryl Streep"],
+    crew: ["Steven Spielberg"],
+    imdb: "8.1",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 5,
+    name: "Wide Girl",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/girl_best-288x400.jpg",
+    genre: "Comedy, Drama, Romance",
+    duration: "1h 58m",
+    description:
+      "A heartwarming tale of a young woman navigating the challenges of life and love. With humor and emotional depth",
+    actors: ["Emma Stone"],
+    crew: ["David O. Russell"],
+    imdb: "7.8",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 6,
+    name: "The Good Doctor",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/good-doctor-288x400.jpg",
+    genre: "Drama, Mystery, Sci-Fi",
+    duration: "1h 58m",
+    description:
+      "A doctor with extraordinary abilities faces moral and scientific dilemmas as he uncovers hidden truths in a futuristic world.",
+    actors: ["Freddie Highmore"],
+    crew: ["Mike Schur"],
+    imdb: "7.9",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 7,
+    name: "Best Friend",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/best-frenit-288x400.jpg",
+    genre: "Comedy, Drama, Romance",
+    duration: "1h 58m",
+    description:
+      "A delightful film about friendship and romance, exploring how close bonds can evolve into something deeper. Filled with humor and heartfelt moments",
+    actors: ["Jennifer Lawrence"],
+    crew: ["Paul Feig"],
+    imdb: "7.7",
+    language: "English",
+    video: successtion_
+  },
+  {
+    id: 8,
+    name: "Friend Zone",
+    year: "2023",
+    poster:
+      "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/movies6-288x400.jpg",
+    genre: "Comedy, Drama, Romance",
+    duration: "1h 58m",
+    description:
+      "A charming romantic comedy about two friends who struggle with their feelings for each other. As their relationship evolves",
+    actors: ["Kurt Russell"],
+    crew: ["Nancy Meyers"],
+    imdb: "7.6",
+    language: "English",
+    video: successtion_
+  }
+];
