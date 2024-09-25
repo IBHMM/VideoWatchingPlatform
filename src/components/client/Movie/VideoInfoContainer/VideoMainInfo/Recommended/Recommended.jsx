@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './Recommended.css';
 import { Videos } from "../../../../../../constants/client.constants";
+import { useFilterVideosQuery } from "../../../../../../redux/api/client/movie";
 
 function HoverContent({ movie, isVisible }) {
   return (
@@ -20,6 +21,17 @@ function HoverContent({ movie, isVisible }) {
 }
 
 export function Recommended({ movie }) {
+
+  const { data: recommendedVideos, isLoading: isLoadingRecommended, isError: isErrorRecommended } = useFilterVideosQuery({
+    genre: movie.genre,
+    actor: movie.actors[0],
+    director: movie.director,
+    year: movie.year,
+    quality: movie.quality
+  });
+
+  console.log(data)
+
   const recommendedMovies = Videos.filter(
     (video) =>
       (video.genre === movie.genre || video.actors.includes(movie.actors[0])) &&

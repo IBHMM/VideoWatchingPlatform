@@ -15,13 +15,13 @@ export const UserMovieApi = createApi({
 
     getVideoById: builder.query({
       query: (id) => `/getvideo/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Video', id }],
+      providesTags: ['Video'],
     }),
 
-    filterVideos: builder.query({
-      query: (queryParams) => ({
+    filterVideos: builder.mutation({
+      query: (querybody) => ({
         url: '/filtervideos',
-        params: queryParams, 
+        body: querybody,
       }),
       providesTags: ['Video'],
     }),
@@ -55,5 +55,10 @@ export const UserMovieApi = createApi({
 });
 
 export const {
-  useGetAllVideosQuery
+  useGetAllVideosQuery,
+  useGetVideoByIdQuery,
+  useFilterVideosQuery,
+  useAddCommentMutation,
+  useUpdateCommentMutation,
+  useDeleteCommentMutation,
 } = UserMovieApi;

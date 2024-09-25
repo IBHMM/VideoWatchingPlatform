@@ -24,8 +24,8 @@ export function MovieMain() {
     const formData = new FormData();
     formData.append('name', values.name);
     formData.append('genre', values.genre);
-    formData.append('isAdultContent', values.isAdultContent);
-    formData.append('isSubscriptionNeed', values.isSubscriptionNeed);
+    formData.append('isAdultContent', values.isAdultContent || false);
+    formData.append('isSubscriptionNeed', values.isSubscriptionNeed || false);
     formData.append('writer', values.writer);
     formData.append('director', values.director);
     formData.append('cast', values.cast.join(', '));
@@ -308,7 +308,7 @@ export function MovieMain() {
 
           <Form.Item>
             <Button type="primary" htmlType="submit" loading={AisLoading}>
-              Upload
+              {AisLoading ? <Loader /> : "Upload"}
             </Button>
           </Form.Item>
         </Form>

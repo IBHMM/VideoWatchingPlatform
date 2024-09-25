@@ -1,5 +1,6 @@
 import { Image } from "antd";
 import { Loader } from "../../../../components/admin/Layout/Animation/Loading";
+import { FaTrashAlt } from "react-icons/fa";
 
 export function AddForm({handleAdd, formRef, handleChange, picture, setPicture, AisLoading}) {
   return (

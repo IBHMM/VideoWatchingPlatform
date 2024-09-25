@@ -22,7 +22,7 @@ export function Navbar() {
             <main className='flex items-center justify-between max-[500px]:w-[95%] w-[90%]'>
                 {menu && <Navbar_Menu setMenu={setMenu} />}
                 <div className='flex items-center justify-start gap-[30px]'>
-                    <Link to={'/client/home'} className="flex items-center justify-start gap-[1px] cursor-pointer">
+                    <Link to={'/client/home/a'} className="flex items-center justify-start gap-[1px] cursor-pointer">
                         <img src={logo} alt="" className='mr-1' />
                         <p className='text-[30px] text-white font-semibold max-[500px]:text-[20px]'>
                             FLICKY

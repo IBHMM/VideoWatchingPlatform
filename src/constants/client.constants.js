@@ -9,77 +9,68 @@ import icon3 from '../assets/icons/Features_3.svg';
 import icon4 from '../assets/icons/Features_4.svg';
 
 
-
 export const TrendingMoviesData = [
   {
-    id: 1,
+    id: "dfe72b28-2f46-4f5f-89c4-8f17365488a2",
     name: "John Wich 4",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/john-wich-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/john-wich-288x400.jpg",
     genre: "Action, Crime, Thriller",
     duration: "1h 49m",
   },
   {
-    id: 2,
+    id: "a5a72845-8712-4389-ae6f-8e5c2a12d8a7",
     name: "Spider Man Memo",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/spider_ex-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/spider_ex-288x400.jpg",
     genre: "Action, Adventure, Fantasy",
     duration: "2h 28m",
   },
   {
-    id: 3,
+    id: "aa6dca45-8f29-411d-934d-bc423bf3ff23",
     name: "The White House",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/house-down-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/house-down-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
   },
   {
-    id: 4,
+    id: "aad1bb84-4d77-4427-81ae-85e04dfd0b8e",
     name: "The Post",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/the_post-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/the_post-288x400.jpg",
     genre: "Drama, Mystery, Thriller",
     duration: "1h 57m",
   },
   {
-    id: 5,
+    id: "6ec3f6d3-4a11-4701-8922-0f88fba13d27",
     name: "Wide Girl",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/girl_best-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/girl_best-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
   },
   {
-    id: 6,
+    id: "e12b7827-58de-45cb-8b43-4b2f8a930199",
     name: "The Good Doctor",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/good-doctor-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/good-doctor-288x400.jpg",
     genre: "Drama, Mystery, Sci-Fi",
     duration: "1h 58m",
   },
   {
-    id: 7,
+    id: "bb083719-e22d-4f34-8a34-bb9fa684cd5d",
     name: "Best Friend",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/best-frenit-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/best-frenit-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
   },
   {
-    id: 8,
+    id: "ff0fe35c-85c5-4f31-bb18-2dca9cb13e7e",
     name: "Friend Zone",
     year: "2023",
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/movies6-288x400.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/movies6-288x400.jpg",
     genre: "Comedy, Drama, Romance",
     duration: "1h 58m",
   },
@@ -115,8 +106,7 @@ export const headerCarousel = [
 
 export const EditorsPick = [
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/Rosaline-Stars-Share-Their-Favorite-One-Liners-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/Rosaline-Stars-Share-Their-Favorite-One-Liners-480x250.jpg",
     duration: "7 min",
     name: "Rosaline Stars Share Their Favorite One-Liners",
     wiev: 960,
@@ -124,10 +114,10 @@ export const EditorsPick = [
     genre: "Comedy",
     likes: 10,
     isLive: true,
+    id: "dfe72b28-2f46-4f5f-89c4-8f17365488a2" // From "John Wich 4"
   },
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/harry-cunningham-EPi3TR123-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/harry-cunningham-EPi3TR123-480x250.jpg",
     duration: "8 min",
     name: "Rosaline Stars Share Their Favorite One-Liners",
     wiev: 960,
@@ -135,10 +125,10 @@ export const EditorsPick = [
     genre: "Education Fation",
     likes: 4,
     isLive: true,
+    id: "a5a72845-8712-4389-ae6f-8e5c2a12d8a7" // From "Spider Man Memo"
   },
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/xuan-nguyen-LRAHyIUjFps-unsplash-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/xuan-nguyen-LRAHyIUjFps-unsplash-480x250.jpg",
     duration: "7 min",
     name: "The Warrior Life",
     wiev: 579,
@@ -146,10 +136,10 @@ export const EditorsPick = [
     genre: "Music Nature",
     likes: 8,
     isLive: false,
+    id: "aa6dca45-8f29-411d-934d-bc423bf3ff23" // From "The White House"
   },
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/sergey-semin-Oa7QSM3Stpc-unsplash-1-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/sergey-semin-Oa7QSM3Stpc-unsplash-1-480x250.jpg",
     duration: "9 min",
     name: "Best Scene-Jack Sparrow steals the interceptor (Pirates of the Caribbean)",
     wiev: 579,
@@ -157,10 +147,10 @@ export const EditorsPick = [
     genre: "Sport Travel",
     likes: 12,
     isLive: true,
+    id: "aad1bb84-4d77-4427-81ae-85e04dfd0b8e" // From "The Post"
   },
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/Manchester-City-vs-Chelsea-Highlight-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/Manchester-City-vs-Chelsea-Highlight-480x250.jpg",
     duration: "6 min",
     name: "Manchester City vs Chelsea Highlight",
     wiev: 579,
@@ -168,10 +158,10 @@ export const EditorsPick = [
     genre: "Sport Travel",
     likes: 15,
     isLive: false,
+    id: "6ec3f6d3-4a11-4701-8922-0f88fba13d27" // From "Wide Girl"
   },
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/poppy-yellow-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/poppy-yellow-480x250.jpg",
     duration: "5 min",
     name: "See How the Garden Grows",
     wiev: 579,
@@ -179,10 +169,10 @@ export const EditorsPick = [
     genre: "History Mythology",
     likes: 15,
     isLive: true,
+    id: "e12b7827-58de-45cb-8b43-4b2f8a930199" // From "The Good Doctor"
   },
   {
-    poster:
-      "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/Big-Machine-480x250.jpg",
+    poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/Big-Machine-480x250.jpg",
     duration: "19 min",
     name: "Big Machine",
     wiev: 579,
@@ -190,7 +180,8 @@ export const EditorsPick = [
     genre: "Science Universe",
     likes: 12,
     isLive: false,
-  },
+    id: "bb083719-e22d-4f34-8a34-bb9fa684cd5d" // From "Best Friend"
+  }
 ];
 
 export const Categories = [
@@ -424,7 +415,7 @@ export const features_ = [
   },
 ]
 
-export const Videos =  [
+export const Videos = [
   {
     id: 1,
     name: "John Wich 4",
@@ -439,7 +430,8 @@ export const Videos =  [
     crew: ["Chad Stahelski"],
     imdb: "8.2",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "platinum"
   },
   {
     id: 2,
@@ -455,7 +447,8 @@ export const Videos =  [
     crew: ["Jon Watts"],
     imdb: "8.0",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "diamond"
   },
   {
     id: 3,
@@ -471,7 +464,8 @@ export const Videos =  [
     crew: ["Michael Schur"],
     imdb: "7.5",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "free"
   },
   {
     id: 4,
@@ -487,7 +481,8 @@ export const Videos =  [
     crew: ["Steven Spielberg"],
     imdb: "8.1",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "diamond"
   },
   {
     id: 5,
@@ -503,7 +498,8 @@ export const Videos =  [
     crew: ["David O. Russell"],
     imdb: "7.8",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "platinum"
   },
   {
     id: 6,
@@ -519,7 +515,8 @@ export const Videos =  [
     crew: ["Mike Schur"],
     imdb: "7.9",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "diamond"
   },
   {
     id: 7,
@@ -535,7 +532,8 @@ export const Videos =  [
     crew: ["Paul Feig"],
     imdb: "7.7",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "free"
   },
   {
     id: 8,
@@ -551,6 +549,7 @@ export const Videos =  [
     crew: ["Nancy Meyers"],
     imdb: "7.6",
     language: "English",
-    video: successtion_
+    video: successtion_,
+    subscription: "free"
   }
 ];
