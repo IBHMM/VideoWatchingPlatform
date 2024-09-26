@@ -21,7 +21,11 @@ export const UserMovieApi = createApi({
     filterVideos: builder.mutation({
       query: (querybody) => ({
         url: '/filtervideos',
-        body: querybody,
+        method: 'POST',  
+        body: querybody,  
+        headers: {
+          'Content-Type': 'application/json',
+        },
       }),
       providesTags: ['Video'],
     }),
@@ -32,7 +36,7 @@ export const UserMovieApi = createApi({
         method: 'POST',
         body: commentData,
       }),
-      invalidatesTags: (result, error, { videoId }) => [{ type: 'Comment', videoId }],
+      invalidatesTags: ["Comment"],
     }),
 
     updateComment: builder.mutation({
@@ -49,7 +53,7 @@ export const UserMovieApi = createApi({
         url: `/videos/${videoId}/comments/delete/${commentId}`,
         method: 'DELETE',
       }),
-      invalidatesTags: (result, error, { videoId }) => [{ type: 'Comment', videoId }],
+      invalidatesTags: ["Comment"],
     }),
   }),
 });
@@ -57,7 +61,7 @@ export const UserMovieApi = createApi({
 export const {
   useGetAllVideosQuery,
   useGetVideoByIdQuery,
-  useFilterVideosQuery,
+  useFilterVideosMutation,
   useAddCommentMutation,
   useUpdateCommentMutation,
   useDeleteCommentMutation,

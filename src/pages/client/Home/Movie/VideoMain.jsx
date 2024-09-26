@@ -2,8 +2,7 @@ import { useParams } from "react-router-dom";
 import { VideoInfoMain } from "../../../../components/client/Movie/VideoInfoContainer/VideoInfoMain";
 import { VideoContainer } from "../../../../components/client/Movie/VideoContainer/VideoContaner";
 import { Loader } from "../../../../components/client/Layout/Animation/Loader";
-import { useGetVideoByIdQuery, useFilterVideosQuery } from "../../../../redux/api/client/movie";
-import { useEffect } from "react";
+import { useGetVideoByIdQuery } from "../../../../redux/api/client/movie";
 
 export function VideoMain() {
     const { movieid } = useParams();
@@ -14,8 +13,8 @@ export function VideoMain() {
             {
                 data && !isLoading && !isError ? (
                     <>
-                        <VideoContainer data={data} />
-                        <VideoInfoMain data={data} recommendedVideos={recommendedVideos} />
+                        <VideoContainer movie={data} />
+                        <VideoInfoMain movie={data} />
                     </>
                 ) : <Loader />
             }

@@ -9,7 +9,7 @@ export function VideoAbout({movie}) {
         <div className="flex items-center space-x-4 text-sm ">
             <>
                 <Rate allowHalf defaultValue={5} style={{ color: "#722ED1" }} />
-                <span className="text-gray-400">⭐ {movie.imdb}</span>
+                <span className="text-gray-400">⭐ {movie.score.imdb}</span>
             </>
           <div className="flex items-center space-x-2">
             <EyeOutlined className="text-gray-400" />
@@ -22,7 +22,7 @@ export function VideoAbout({movie}) {
 
       <div className="w-full flex items-center space-x-4 mb-4">
         <span className="text-gray-400">{movie.year}</span>
-        <span className="text-gray-400">{movie.duration}</span>
+        <span className="text-gray-400">{movie.duration} min</span>
         <span className="text-gray-400">{movie.language}</span>
         <Tag color="gray">{movie.rating || "TV-MA"}</Tag>
       </div>
@@ -34,13 +34,13 @@ export function VideoAbout({movie}) {
 
       <div className="flex items-center justify-center gap-2 mb-5">
         <p className="text-lg font-semibold">Cast:</p>
-        <p className="text-gray-300">{movie.actors.join(", ")}</p>
+        <p className="text-gray-300">{movie.cast.join(", ")}</p>
       </div>
-
+{/* 
       <div className="flex items-center justify-center gap-2 mb-5">
         <p className="text-lg font-semibold">Crew:</p>
         <p className="text-gray-300">{movie.crew.join(", ")}</p>
-      </div>
+      </div> */}
 
       <div className="flex items-center justify-center gap-2 mb-5">
         <p className="text-lg font-semibold">Tags:</p>
