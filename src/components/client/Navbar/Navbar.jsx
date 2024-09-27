@@ -38,9 +38,9 @@ export function Navbar() {
                             FEATURES 
                         </div>
                         {featuresVisible && <Features />}
-                        <div className='hover:text-violet-500 text-[12px]'>
+                        <Link to={"/client/home/movies"} className='hover:text-violet-500 text-[12px]'>
                             VIDEOS
-                        </div>
+                        </Link>
                         <div className='hover:text-violet-500 text-[12px]'>
                             CONTACT US
                         </div>

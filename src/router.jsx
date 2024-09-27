@@ -18,7 +18,8 @@ import { Profile } from './pages/client/Home/Profile/ProfileMain';
 import { Settings } from './components/client/Profile/Settings/Settings';
 import { Plans } from './components/client/Plans/Plans';
 import { Billing } from './components/client/Plans/Billing/Billing';
-import { VideoMain } from './pages/client/Home/Movie/VideoMain';
+import { VideoMain } from './pages/client/Home/Watch/VideoMain';
+import { MoviesMain } from './pages/client/Home/Movies/MovieMain';
 
 const router = createBrowserRouter([
     {
@@ -103,6 +104,20 @@ const router = createBrowserRouter([
                         path: 'video/:movieid',
                         element: <VideoMain />
                     },
+                    {
+                        path: "movies",
+                        element: <MoviesMain />,
+                        children: [
+                          {
+                            path: ":genre", 
+                            element: <p>wfew</p>
+                          },
+                          {
+                            path: ":genre/:year", 
+                            element: <p>wfew</p>
+                          }
+                        ]
+                    }
                 ]
             }
         ]

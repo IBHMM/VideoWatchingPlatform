@@ -60,7 +60,6 @@ export const UserApi = createApi({
         invalidatesTags: ['User'],
       }),
   
-      // Soft delete a user by ID
       softDelete: builder.mutation({
         query: (userId) => ({
           url: `/softDelete/${userId}`,
@@ -69,7 +68,6 @@ export const UserApi = createApi({
         invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
       }),
   
-      // Restore a soft-deleted user by ID
       restoreUser: builder.mutation({
         query: (userId) => ({
           url: `/restoreUser/${userId}`,
@@ -78,7 +76,6 @@ export const UserApi = createApi({
         invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
       }),
   
-      // Add a subscription to a user by ID
       addSubscription: builder.mutation({
         query: (userId) => ({
           url: `/subscription/add/${userId}`,
@@ -87,7 +84,6 @@ export const UserApi = createApi({
         invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
       }),
   
-      // Remove a subscription from a user by ID
       removeSubscription: builder.mutation({
         query: (userId) => ({
           url: `/subscription/remove/${userId}`,

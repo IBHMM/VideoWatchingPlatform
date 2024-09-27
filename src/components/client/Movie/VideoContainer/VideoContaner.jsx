@@ -10,20 +10,20 @@ export function VideoContainer({movie}) {
     const [updateUser, {isLoading, isError, isSuccess}] = useUpdateUserMutation();
     const user = useSelector(state => state.user.user);
 
-    // useEffect(() => {
-    //     if (!user) {
-    //         setShow(true);
-    //         return;
-    //     }
-    //     if (movie.isSubscriptionNeed && (user.subscription != "free" || user.subscription == null)) {
-    //         updateUser({userId: user.id, updatedData: {History: [user.History, ...movie]}});
-    //         setShow(true);
-    //     }
-    //     if (!movie.isSubscriptionNeed) {
-    //         updateUser({userId: user.id, updatedData: {History: [user.History, ...movie]}});
-    //         setShow(false);
-    //     }
-    // }, [])  
+    useEffect(() => {
+        if (!user) {
+            setShow(true);
+            return;
+        }
+        if (movie.isSubscriptionNeed && (user.subscription != "free" || user.subscription == null)) {
+            updateUser({userId: user.id, updatedData: {watchList: [user.watchList, movie]}});
+            setShow(true);
+        }
+        if (!movie.isSubscriptionNeed) {
+            updateUser({userId: user.id, updatedData: {watchList: [user.watchList, movie]}});
+            setShow(false);
+        }
+    }, [])  
 
     return (
         <div className="w-screen flex items-center justify-center mt-10 max-w-[2000px]">

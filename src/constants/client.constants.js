@@ -553,3 +553,30 @@ export const Videos = [
     subscription: "free"
   }
 ];
+
+
+export const genres = [
+  "All",
+  "Action",
+  "Crime",
+  "Thriller",
+  "Adventure",
+  "Fantasy",
+  "Comedy",
+  "Drama",
+  "Romance",
+  "Mystery",
+  "Sci-Fi"
+];
+
+export const years = [
+  "2023",
+  "2022",
+  "2021",
+  "2020",
+  "2019",
+  "2018",
+  "2017",
+  "2016",
+  "2015",
+]

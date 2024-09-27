@@ -56,14 +56,14 @@ export function MovieMain() {
 
   const handleUploadModalCancel = () => {
     setUploadModalVisible(false);
-    setThumbnail(null); // Clear thumbnail
-    setVideoFile(null); // Clear video file
+    setThumbnail(null); 
+    setVideoFile(null); 
   };
 
   const uploadThumbnailProps = {
     beforeUpload: (file) => {
       setThumbnail(file);
-      return false; // Prevent automatic upload
+      return false; 
     },
     showUploadList: false,
   };
@@ -71,7 +71,7 @@ export function MovieMain() {
   const uploadVideoProps = {
     beforeUpload: (file) => {
       setVideoFile(file);
-      return false; // Prevent automatic upload
+      return false; 
     },
     showUploadList: false,
   };
