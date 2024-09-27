@@ -36,7 +36,7 @@ export const UserMovieApi = createApi({
         method: 'POST',
         body: commentData,
       }),
-      invalidatesTags: ["Comment"],
+      invalidatesTags: ["Comment", "Video"],
     }),
 
     updateComment: builder.mutation({
@@ -45,7 +45,7 @@ export const UserMovieApi = createApi({
         method: 'PUT',
         body: commentData,
       }),
-      invalidatesTags: (result, error, { videoId }) => [{ type: 'Comment', videoId }],
+      invalidatesTags: ["Comment", "Video"],
     }),
 
     deleteComment: builder.mutation({
@@ -53,7 +53,7 @@ export const UserMovieApi = createApi({
         url: `/videos/${videoId}/comments/delete/${commentId}`,
         method: 'DELETE',
       }),
-      invalidatesTags: ["Comment"],
+      invalidatesTags: ["Comment", "Video"],
     }),
   }),
 });

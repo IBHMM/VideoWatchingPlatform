@@ -38,7 +38,7 @@ export function Signup() {
             name: formData.get("name"),
             surname: formData.get("surname"),
             username: formData.get("username"),
-            age: formData.get("age"),
+            age: Number(formData.get("age")),
         };
         Register(credentials);
     };
