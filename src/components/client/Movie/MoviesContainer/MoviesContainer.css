@@ -10,6 +10,44 @@
   }
   
   .moviecards {
-    animation: card 0.5s ease; /* Changed 'easy' to 'ease' */
+    animation: card 0.5s ease; 
   }
   
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn {
+    background-color: #1b1c2a;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #34354a;
+}
+
+.btn.active {
+    background-color: #7a5dfa; 
+}
+
+.btn.prev {
+    width: 40px;
+    height: 40px;
+    background-color: #34354a;
+    border-radius: 8px;
+}
+
+.btn.prev:disabled {
+    background-color: #1b1c2a;
+    cursor: not-allowed;
+}
+

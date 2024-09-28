@@ -37,23 +37,13 @@ export function MoviesMain() {
                             <p className="text-[150%] text-white font-bold mb-5">Genres</p>
                             {genres.map((g, index) => (
                                 <div key={index}>
-                                    {g === "All" ? (
-                                        <NavLink
-                                            className="text-white text-[15px] hover:text-violet-600 transition-all duration-300"
-                                            key={index}
-                                            to={`/client/home/movies`}
-                                        >
-                                            {g}
-                                        </NavLink>
-                                    ) : (
-                                        <NavLink
-                                            className="text-white text-[15px] hover:text-violet-600 transition-all duration-300"
-                                            key={index}
-                                            to={`/client/home/movies/${g}`}
-                                        >
-                                            {g}
-                                        </NavLink>
-                                    )}
+                                    <NavLink
+                                        className="text-white text-[15px] hover:text-violet-600 transition-all duration-300"
+                                        key={index}
+                                        to={`/client/home/movies/${g}`}
+                                    >
+                                        {g}
+                                    </NavLink>
                                 </div>
                             ))}
                         </div>

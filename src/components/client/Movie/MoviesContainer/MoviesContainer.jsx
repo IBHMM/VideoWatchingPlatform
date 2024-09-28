@@ -1,31 +1,72 @@
-import { useParams } from "react-router-dom"
-import { useFilterVideosMutation } from "../../../../redux/api/client/movie";
+import { Link, useParams } from "react-router-dom";
+import { useFilterVideosMutation, useGetAllVideosQuery } from "../../../../redux/api/client/movie";
 import { useEffect, useState } from "react";
 import MovieCard from "../../NewRelease/NewRelease";
-import "./MoviesContainer.css"
+import "./MoviesContainer.css";
+import { genres, years } from "../../../../constants/client.constants";
 
 export function MoviesContainer() {
-
     const [visibleCard, setVisibleCard] = useState(null);
     const { genre, year } = useParams();
-    const [FilterData, {isLoading, isError, isSuccess, error, data}] = useFilterVideosMutation();
+    const [currentPage, setCurrentPage] = useState(1); 
+    const itemsPerPage = 10; 
+    const [FilterData, { isLoading, isError, isSuccess, error, data }] = useFilterVideosMutation();
+    const { isLoading: AisLoading, isError: AisError, data: Adata, isSuccess: AisSuccess } = useGetAllVideosQuery();
 
     useEffect(() => {
-        FilterData({genre, year});
+        if (genre !== "All") {
+            FilterData({ genre, year });
+        }
     }, [genre, year]);
 
-    return (
-        <div className="w-full flex flex-col items-start justify-start gap-3">
+    const allMovies = (genre !== "All" || year) ? data : Adata; 
+    const totalPages = Math.ceil((allMovies?.length || 0) / itemsPerPage); 
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const paginatedData = allMovies?.slice(startIndex, startIndex + itemsPerPage);
 
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
+
+    const handlePreviousPage = () => {
+        if (currentPage > 1) setCurrentPage(currentPage - 1);
+    };
+
+    return (
+        <div className="w-full flex flex-col items-center justify-start gap-3">
             <div className="flex items-center justify-between w-full">
                 <p className="text-white">
-                    Showing results : {isSuccess ? data.length : ""}
+                    Showing results: {isSuccess || AisSuccess ? allMovies?.length : ""}
                 </p>
+
+                <div className="flex items-center justify-end gap-3">
+                    <select name="genre" id="genre" className="bg-gray-800 text-white rounded-lg px-2 py-1 text-[12px]">
+                        {genres.map((item, index) => (
+                            <option key={index} value={item}>
+                                {item}
+                            </option>
+                        ))}
+                    </select>
+                    <select name="years" id="years" className="bg-gray-800 text-white rounded-lg px-2 py-1 text-[12px]">
+                        {years.map((item, index) => (
+                            <option key={index} value={item}>
+                                {item}
+                            </option>
+                        ))}
+                    </select>
+                    <select name="sort" id="sort" className="bg-gray-800 text-white rounded-lg px-2 py-1 text-[12px]">
+                        <option value="title">By title</option>
+                        <option value="views">By views</option>
+                        <option value="likes">By likes</option>
+                        <option value="date">By Date</option>
+                        <option value="score">By score</option>
+                    </select>
+                </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid 2xl:grid-cols-5 gap-4 xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 max-h-[1200px] overflow-y-scroll mt-5">
                 {
-                    data?.map((item, index) => (                            
+                    paginatedData?.map((item, index) => (
                         <div
                             onMouseEnter={() => setVisibleCard(index)}
                             onMouseLeave={() => setVisibleCard(null)}
@@ -40,6 +81,27 @@ export function MoviesContainer() {
                 }
             </div>
 
+            <div className="pagination-controls flex justify-center items-center gap-2 mt-4">
+                <button 
+                    onClick={handlePreviousPage} 
+                    disabled={currentPage === 1}
+                    className="btn prev"
+                >
+                    «
+                </button>
+
+                {
+                    Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                            key={index + 1}
+                            onClick={() => handlePageChange(index + 1)}
+                            className={`btn page ${currentPage === index + 1 ? 'active' : ''}`}
+                        >
+                            {index + 1}
+                        </button>
+                    ))
+                }
+            </div>
         </div>
-    )
+    );
 }
