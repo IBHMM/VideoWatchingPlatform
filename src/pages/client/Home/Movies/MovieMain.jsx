@@ -1,11 +1,11 @@
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { Link, NavLink, Outlet, useParams } from "react-router-dom";
 import { genres, years } from "../../../../constants/client.constants";
 import { useGetAllVideosQuery } from "../../../../redux/api/client/movie";
 
 export function MoviesMain() {
     const { year, genre } = useParams();
     const { isLoading, isError, error, data, isSuccess } = useGetAllVideosQuery();
-    const topMovies = data?.slice(0, 5); // Slicing the top 5 movies
+    const topMovies = data?.slice(0, 5);
 
     return (
         <div className="flex w-screen items-center justify-center mt-10">
@@ -30,13 +30,13 @@ export function MoviesMain() {
                     </div>
                 </div>
 
-                <div className="flex w-full items-center justify-between">
+                <div className="flex w-full items-start justify-between">
                     <div className="flex flex-col items-start justify-start gap-5 max-w-[300px]">
                         
                         <div className="flex flex-col items-start justify-center gap-1">
                             <p className="text-[150%] text-white font-bold mb-5">Genres</p>
                             {genres.map((g, index) => (
-                                <>
+                                <div key={index}>
                                     {g === "All" ? (
                                         <NavLink
                                             className="text-white text-[15px] hover:text-violet-600 transition-all duration-300"
@@ -54,7 +54,7 @@ export function MoviesMain() {
                                             {g}
                                         </NavLink>
                                     )}
-                                </>
+                                </div>
                             ))}
                         </div>
 
@@ -84,7 +84,8 @@ export function MoviesMain() {
                             {isSuccess && topMovies && topMovies.length > 0 && (
                                 <div className="text-white">
                                     {topMovies.map((movie, index) => (
-                                        <Link  key={index} className="flex items-center justify-start gap-2 mb-3">
+                                        <Link to={`/client/home/video/${movie.id}`}
+                                      key={index} className="flex items-center justify-start gap-2 mb-3">
                                             <img src={movie.thumbnailUrl} alt={movie.name} className="w-12 h-16 object-cover"/>
                                             <div className="flex flex-col">
                                                 <p className="font-bold">{movie.name}</p>
@@ -104,9 +105,7 @@ export function MoviesMain() {
                         </div>
                     </div>
 
-                    <div className="w-full flex flex-col items-start justify-center">
-                        <Outlet />
-                    </div>
+                    <Outlet />
                 </div>
             </div>
         </div>

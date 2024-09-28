@@ -47,7 +47,7 @@ export const NewRelease = () => {
     );
 };
 
-const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
+export const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
     const isVisible = visibleCard === index;
 
     const handleClick = () => {
@@ -61,7 +61,7 @@ const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
                 onMouseEnter={handleClick}
                 onMouseLeave={handleClick}
             >
-                <img src={movie.poster} alt={movie.name} className='w-full h-[90%] object-cover'/>
+                <img src={movie.poster ? movie.poster : movie.thumbnailUrl} alt={movie.name} className='w-full h-[90%] object-cover'/>
                 
                 {isVisible && (
                     <div 
@@ -71,7 +71,7 @@ const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
                         <div className="flex items-center justify-start gap-[20px]">
                             <img src={'https://streamvid.gavencreative.com/wp-content/themes/streamvid/assets/image/imdb.png'} alt="" />
                             <div className="bg-purple-600 text-white text-[13px] font-semibold px-4 py-1 rounded-md">
-                                {movie.imdb}
+                                {movie.imdb ? movie.imdb : movie.score.imdb}
                             </div>
                         </div>
 
@@ -97,7 +97,9 @@ const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
                             <div className="flex items-center gap-2">
                                 <span className="text-[13px] text-gray-300">Actors:</span> 
                                 <div className="flex items-start justify-start gap-1">
-                                {movie.actors.map((actor, index) => (
+                                {movie.actors ? movie.actors.map((actor, index) => (
+                                    <p key={index} className="text-[13px] text-white">{actor}</p>
+                                )) : movie.cast.map((actor, index) => (
                                     <p key={index} className="text-[13px] text-white">{actor}</p>
                                 ))}
                                 </div>
@@ -106,7 +108,7 @@ const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
                             <div className="flex items-center gap-2">
                                 <span className="text-[13px] text-gray-300">Crew:</span> 
                                 <div className="flex items-start justify-start gap-1">
-                                {movie.crew.map((crewMember, index) => (
+                                {movie.crew?.map((crewMember, index) => (
                                     <p key={index} className="text-[13px] text-white">{crewMember}</p>
                                 ))}
                                 </div>

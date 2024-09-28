@@ -20,6 +20,7 @@ import { Plans } from './components/client/Plans/Plans';
 import { Billing } from './components/client/Plans/Billing/Billing';
 import { VideoMain } from './pages/client/Home/Watch/VideoMain';
 import { MoviesMain } from './pages/client/Home/Movies/MovieMain';
+import { MoviesContainer } from './components/client/Movie/MoviesContainer/MoviesContainer';
 
 const router = createBrowserRouter([
     {
@@ -110,11 +111,11 @@ const router = createBrowserRouter([
                         children: [
                           {
                             path: ":genre", 
-                            element: <p>wfew</p>
+                            element: <MoviesContainer />
                           },
                           {
                             path: ":genre/:year", 
-                            element: <p>wfew</p>
+                            element: <MoviesContainer />
                           }
                         ]
                     }

@@ -1,12 +1,15 @@
 @keyframes opening {
     from {
-        transform: translateY(-400px);
+        transform: translateY(-40px);
+        opacity: 0;
     }
     to {
         transform: translateY(0px);
+        opacity: 1;
     }
 }
 
 .informationscontainer {
     animation: opening ease-in-out 0.5s;
+    cursor: pointer;
 }

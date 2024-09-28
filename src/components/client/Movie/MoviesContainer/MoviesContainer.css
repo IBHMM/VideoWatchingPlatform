@@ -1,0 +1,15 @@
+@keyframes card {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+  .moviecards {
+    animation: card 0.5s ease; /* Changed 'easy' to 'ease' */
+  }
+  
