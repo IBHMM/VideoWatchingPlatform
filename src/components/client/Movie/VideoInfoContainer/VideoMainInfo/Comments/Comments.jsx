@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAddCommentMutation, useDeleteCommentMutation, useUpdateCommentMutation } from '../../../../../../redux/api/client/movie';
 import { useSelector } from 'react-redux';
 import { message } from 'antd';
@@ -8,11 +8,14 @@ import { Loader } from '../../../../Layout/Animation/Loader';
 export function Comments({ movie }) {
     const [rating, setRating] = useState(0);
     const [reviewText, setReviewText] = useState('');
+    const [edit, setEdit] = useState(null); 
+    const [editRating, setEditRating] = useState(0);
+    const [editReviewText, setEditReviewText] = useState('');
     const user = useSelector(state => state.user.user);
     
     const [AddComment, { isLoading, isError, isSuccess }] = useAddCommentMutation();
-    const [deleteComment, {isLoading: DisLoading, isError: DisError, isSuccess: DisSuccess}] = useDeleteCommentMutation();
-    const [updateComment, {isLoading: UisLoading, isError: UisError, isSuccess: UisSuccess}] = useUpdateCommentMutation();
+    const [deleteComment, { isLoading: DisLoading }] = useDeleteCommentMutation();
+    const [updateComment, { isLoading: UisLoading, isSuccess: UisSuccess }] = useUpdateCommentMutation();
 
     const handleRating = (rate) => {
         setRating(rate);
@@ -40,13 +43,33 @@ export function Comments({ movie }) {
         }
     };
 
-    const handleEdit = (review) => {
-        
+    const handleDelete = (reviewId) => {
+        deleteComment({ videoId: movie.id, commentId: reviewId });
     };
 
-    const handleDelete = (reviewId) => {
-        deleteComment({videoId: movie.id, commentId: reviewId})
+    const handleEditStart = (review) => {
+        setEdit(review._id);
+        setEditRating(parseInt(review.comment.score, 10));
+        setEditReviewText(review.comment.content);
     };
+
+    const handleEditCancel = () => {
+        setEdit(null);
+        setEditRating(0);
+        setEditReviewText('');
+    };
+
+    const handleEditSave = async (reviewId) => {
+        updateComment({ videoId: movie.id, commentId: reviewId, content: editReviewText, score: editRating.toString() });
+    };
+
+    const handleEditRating = (rate) => {
+        setEditRating(rate);
+    };
+
+    useEffect(() => {
+        setEdit(null); 
+    }, [UisSuccess])
 
     return (
         <div className="w-full flex flex-col items-start justify-start">
@@ -90,44 +113,6 @@ export function Comments({ movie }) {
                         />
                     </div>
 
-                    <div className="flex w-full gap-4 mb-4 max-[700px]:flex-col">
-                        <div className="w-1/2 max-[700px]:w-full">
-                            <label htmlFor="name" className="text-gray-400">Name *</label>
-                            <input
-                                id="name"
-                                type="text"
-                                value={user?.name}
-                                readOnly
-                                disabled
-                                className="w-full p-3 mt-1 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500"
-                                placeholder="Enter your name"
-                            />
-                        </div>
-                        <div className="w-1/2 max-[700px]:w-full">
-                            <label htmlFor="email" className="text-gray-400">Email *</label>
-                            <input
-                                id="email"
-                                type="email"
-                                value={user?.email}
-                                disabled
-                                readOnly
-                                className="w-full p-3 mt-1 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500"
-                                placeholder="Enter your email"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="flex items-center mb-4">
-                        <input
-                            type="checkbox"
-                            id="saveInfo"
-                            className="mr-2 bg-gray-800 border border-gray-600 rounded"
-                        />
-                        <label htmlFor="saveInfo" className="text-gray-400">
-                            Save my name, email, and website in this browser for the next time I comment.
-                        </label>
-                    </div>
-
                     <button
                         type="submit"
                         className={`w-auto px-6 py-2 ${isLoading ? 'bg-gray-500' : 'bg-gradient-to-r from-purple-500 to-indigo-500'} text-white rounded-lg hover:opacity-90 focus:outline-none`}
@@ -157,7 +142,7 @@ export function Comments({ movie }) {
                                                 <span className="text-xl font-semibold">{review.user.username}</span>
                                                 <span className="text-sm text-gray-400">{new Date(review.date).toLocaleDateString()}</span>
                                                 <div className="flex items-center mb-2 mt-4">
-                                                    {[...Array(5)].map((_, i) => (
+                                                    {!edit ?  [...Array(5)].map((_, i) => (
                                                         <svg
                                                             key={i}
                                                             className={`w-4 h-4 ${review.comment?.score >= i + 1 ? 'text-violet-700' : 'text-gray-400'} fill-current`}
@@ -168,7 +153,23 @@ export function Comments({ movie }) {
                                                         >
                                                             <path d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l5.46 4.73-1.64 7.03L12 17.27z" />
                                                         </svg>
+                                                    )) : 
+                                                        <div className="flex items-center mt-4">
+                                                            {[...Array(5)].map((_, i) => (
+                                                            <svg
+                                                                    key={i}
+                                                                    onClick={() => handleEditRating(i + 1)}
+                                                                    className={`w-6 h-6 cursor-pointer ${editRating >= i + 1 ? 'text-violet-700' : 'text-gray-400'} fill-current`}
+                                                                    xmlns="http://www.w3.org/2000/svg"
+                                                                    viewBox="0 0 24 24"
+                                                                    fill="none"
+                                                                    stroke="currentColor"
+                                                                >
+                                                                <path d="M12 17.27l6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l5.46 4.73-1.64 7.03L12 17.27z" />
+                                                            </svg>  
                                                     ))}
+                                                        </div>
+                                                }
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +177,7 @@ export function Comments({ movie }) {
                                             <div className="flex items-center space-x-3">
                                                 <AiFillEdit
                                                     className="text-violet-500 cursor-pointer"
-                                                    onClick={() => handleEdit(review)}
+                                                    onClick={() => handleEditStart(review)}
                                                 />
                                                 {DisLoading ? <Loader /> : <AiFillDelete
                                                     className="text-violet-700 cursor-pointer"
@@ -186,8 +187,33 @@ export function Comments({ movie }) {
                                         )}
                                     </div>
                                 </div>
-                                <div className="flex justify-between w-full">
-                                    <div>{review.comment?.content}</div>
+                                <div className="flex justify-between w-full flex-col">
+                                    {edit === review._id ? (
+                                        <>
+                                            <textarea
+                                                value={editReviewText}
+                                                onChange={(e) => setEditReviewText(e.target.value)}
+                                                className="w-full p-3 mt-1 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500"
+                                                rows="4"
+                                            />
+                                            <div className="flex items-center space-x-4 mt-4">
+                                                <button
+                                                    onClick={() => handleEditSave(review._id)}
+                                                    className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-lg hover:opacity-90"
+                                                >
+                                                    {UisLoading ? <Loader /> : "Save"}
+                                                </button>
+                                                <button
+                                                    onClick={handleEditCancel}
+                                                    className="px-4 py-2 bg-gray-500 text-white rounded-lg hover:opacity-90"
+                                                >
+                                                    Cancel
+                                                </button>
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <div>{review.comment?.content}</div>
+                                    )}
                                 </div>
                             </div>
                         </div>

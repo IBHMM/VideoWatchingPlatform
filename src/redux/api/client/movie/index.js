@@ -40,10 +40,10 @@ export const UserMovieApi = createApi({
     }),
 
     updateComment: builder.mutation({
-      query: ({ videoId, commentId, commentData }) => ({
+      query: ({ videoId, commentId, content, score }) => ({
         url: `/videos/${videoId}/comments/update/${commentId}`,
         method: 'PUT',
-        body: commentData,
+        body: {videoId, commentId, content, score},
       }),
       invalidatesTags: ["Comment", "Video"],
     }),
