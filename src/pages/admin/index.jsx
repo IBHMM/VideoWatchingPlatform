@@ -16,7 +16,7 @@ export const Admin = () => {
             navigate('/client/registration/signin');
         }
 
-        if (!loaderdata.isAdmin) {
+        if (loaderdata.role != "admin") {
             message.error('You are not authorized to access this page');
             navigate('/client/home');
         }

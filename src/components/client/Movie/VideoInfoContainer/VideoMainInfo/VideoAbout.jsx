@@ -13,9 +13,9 @@ export function VideoAbout({movie}) {
             </>
           <div className="flex items-center space-x-2">
             <EyeOutlined className="text-gray-400" />
-            <span className="text-gray-400">7 Views</span>
+            <span className="text-gray-400">{movie.view} Views</span>
             <CommentOutlined className="text-gray-400" />
-            <span className="text-gray-400">1</span>
+            <span className="text-gray-400">{movie.reviews.length}</span>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@ export function VideoAbout({movie}) {
       </div>
 
       <div className="flex flex-col items-start justify-start gap-2 mb-5">
-        <span className="text-gray-400 italic">{movie.genre}</span>
+        <span className="text-gray-400 italic"> <span className='text-white font-semibold'> Genre : </span> {movie.genre} </span>
         <p className="mt-2 text-gray-300">{movie.description}</p>
       </div>
 
@@ -36,11 +36,6 @@ export function VideoAbout({movie}) {
         <p className="text-lg font-semibold">Cast:</p>
         <p className="text-gray-300">{movie.cast.join(", ")}</p>
       </div>
-{/* 
-      <div className="flex items-center justify-center gap-2 mb-5">
-        <p className="text-lg font-semibold">Crew:</p>
-        <p className="text-gray-300">{movie.crew.join(", ")}</p>
-      </div> */}
 
       <div className="flex items-center justify-center gap-2 mb-5">
         <p className="text-lg font-semibold">Tags:</p>

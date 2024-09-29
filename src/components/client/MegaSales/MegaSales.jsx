@@ -3,14 +3,10 @@ import { megasales } from '../../../constants/client.constants'
 import { FreeMode, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/pagination';
-
 export function MegaSales() {
     return (
-        <div className="relative flex items-center justify-center w-full p-8 fade-in max-w-[2000px]">
-            <div className="relative flex items-center justify-center w-[100%] gap-8 rounded-lg p-6 shadow-lg container max-[900px]:flex-wrap max-[900px]:items-center max-[900px]:justify-center fade-in-up">
+        <div className="relative flex items-center justify-center w-full fade-in max-w-[2000px] mt-20">
+            <div className="relative flex items-center justify-center w-[90%] gap-8 rounded-lg shadow-lg container_ max-[900px]:flex-wrap max-[900px]:items-center max-[900px]:justify-center fade-in-up">
                 
                 <div className='flex flex-col items-center justify-center gap-2 min-h-[100%] min-[900px]:w-[50%] fade-in-up'>
                     <p className='newsales font-bold text-[15px] px-3 py-1 text-white rounded-md'>

@@ -202,7 +202,7 @@ export const Categories = [
 
 export const NewReleased = [
   {
-    id: 1,
+    id: "dfe72b28-2f46-4f5f-89c4-8f17365488a2",
     name: "John Wich 4",
     year: "2023",
     poster:
@@ -218,7 +218,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 2,
+    id: "a5a72845-8712-4389-ae6f-8e5c2a12d8a7",
     name: "Spider Man Memo",
     year: "2023",
     poster:
@@ -234,7 +234,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 3,
+    id: "aa6dca45-8f29-411d-934d-bc423bf3ff23",
     name: "The White House",
     year: "2023",
     poster:
@@ -250,7 +250,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 4,
+    id: "aad1bb84-4d77-4427-81ae-85e04dfd0b8e",
     name: "The Post",
     year: "2023",
     poster:
@@ -266,7 +266,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 5,
+    id: "6ec3f6d3-4a11-4701-8922-0f88fba13d27",
     name: "Wide Girl",
     year: "2023",
     poster:
@@ -282,7 +282,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 6,
+    id: "e12b7827-58de-45cb-8b43-4b2f8a930199",
     name: "The Good Doctor",
     year: "2023",
     poster:
@@ -298,7 +298,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 7,
+    id: "bb083719-e22d-4f34-8a34-bb9fa684cd5d",
     name: "Best Friend",
     year: "2023",
     poster:
@@ -314,7 +314,7 @@ export const NewReleased = [
     video: successtion_
   },
   {
-    id: 8,
+    id: "ff0fe35c-85c5-4f31-bb18-2dca9cb13e7e",
     name: "Friend Zone",
     year: "2023",
     poster:

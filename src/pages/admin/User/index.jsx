@@ -20,7 +20,6 @@ export function UserMain() {
   const [currentUser, setCurrentUser] = useState(null);
   const formRef = useRef(null);
 
-  // Add state for search term
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleChange = (e) => {

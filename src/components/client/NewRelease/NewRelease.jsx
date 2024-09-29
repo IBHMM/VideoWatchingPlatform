@@ -6,6 +6,7 @@ import { useState } from "react";
 import './newrelease.css';
 import info from '../../../assets/icons/information.png'
 import start from '../../../assets/icons/triangle.png'
+import { Link } from "react-router-dom";
 
 export const NewRelease = () => {
     const [visibleCard, setVisibleCard] = useState(null);
@@ -115,14 +116,14 @@ export const MovieCard = ({ movie, index, visibleCard, setVisibleCard }) => {
                             </div>
 
                             <div className="flex items-start justify-start gap-2">
-                                <div className="flex items-center justify-start gap-1">
+                                <Link to={`/client/home/video/${movie.id}`} className="flex items-center justify-start gap-1">
                                     <div className="w-[40px] h-[40px] rounded-[50%] bg-violet-600 flex items-center justify-center">
                                         <img src={start} alt="" className="w-[10px] h-[10px]" style={{rotate: "90deg"}}/>
                                     </div>
                                     <p className="text-[13px] text-gray-300">
                                         Trailer
                                     </p>
-                                </div>
+                                </Link>
                                 <div className="flex items-center justify-start gap-1">
                                     <div className="w-[40px] h-[40px] rounded-[50%] bg-violet-600 flex items-center justify-center">
                                         <img src={info} alt="" className="w-[15px]"/>

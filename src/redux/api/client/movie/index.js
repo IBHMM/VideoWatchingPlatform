@@ -30,6 +30,13 @@ export const UserMovieApi = createApi({
       providesTags: ['Video'],
     }),
 
+    IncreaseView: builder.mutation({
+      query: (videoId) => ({
+        url: `/view/${videoId}`,
+        method: 'POST',
+      }),
+    }),
+
     addComment: builder.mutation({
       query: ({ videoId, commentData }) => ({
         url: `/videos/${videoId}/comments/add`,
@@ -65,4 +72,5 @@ export const {
   useAddCommentMutation,
   useUpdateCommentMutation,
   useDeleteCommentMutation,
+  useIncreaseViewMutation
 } = UserMovieApi;

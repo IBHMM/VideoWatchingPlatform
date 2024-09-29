@@ -112,7 +112,29 @@ export function Comments({ movie }) {
                             placeholder="Write your review here..."
                         />
                     </div>
+                    <div className='flex w-full items-center justify-between max-md:flex-col gap-5'>
+                        <div className="w-full mb-4">
+                            <label htmlFor="name" className="text-gray-400">Your Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                value={user?.name || ''}
+                                className="w-full p-3 mt-1 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500"
+                                disabled
+                            />
+                        </div>
 
+                        <div className="w-full mb-4">
+                            <label htmlFor="email" className="text-gray-400">Your Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                value={user?.email || ''}
+                                className="w-full p-3 mt-1 bg-gray-800 text-white rounded-lg border border-gray-600 focus:border-indigo-500 focus:outline-none focus:ring focus:ring-indigo-500"
+                                disabled
+                            />
+                        </div>
+                    </div>
                     <button
                         type="submit"
                         className={`w-auto px-6 py-2 ${isLoading ? 'bg-gray-500' : 'bg-gradient-to-r from-purple-500 to-indigo-500'} text-white rounded-lg hover:opacity-90 focus:outline-none`}

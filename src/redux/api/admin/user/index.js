@@ -65,7 +65,7 @@ export const UserApi = createApi({
           url: `/softDelete/${userId}`,
           method: 'PATCH',
         }),
-        invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
+        invalidatesTags: ['User'],
       }),
   
       restoreUser: builder.mutation({
@@ -73,7 +73,7 @@ export const UserApi = createApi({
           url: `/restoreUser/${userId}`,
           method: 'PATCH',
         }),
-        invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
+        invalidatesTags: ['User'],
       }),
   
       addSubscription: builder.mutation({
@@ -81,7 +81,7 @@ export const UserApi = createApi({
           url: `/subscription/add/${userId}`,
           method: 'PATCH',
         }),
-        invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
+        invalidatesTags: ['User'],
       }),
   
       removeSubscription: builder.mutation({
@@ -89,7 +89,7 @@ export const UserApi = createApi({
           url: `/subscription/remove/${userId}`,
           method: 'PATCH',
         }),
-        invalidatesTags: (result, error, userId) => [{ type: 'User', id: userId }],
+        invalidatesTags: ['User'],
       }),
     }),
 });
