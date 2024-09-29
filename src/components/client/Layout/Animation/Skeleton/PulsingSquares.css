@@ -1,0 +1,28 @@
+
+.pulsing-square {
+    background-color: #28263b;
+    animation: pulse 1.5s infinite ease-in-out;
+    z-index: 10000;
+  }
+  
+  .pulse-delay-0 {
+    animation-delay: 0s;
+  }
+  
+  .pulse-delay-1 {
+    animation-delay: 0.3s;
+  }
+  
+  .pulse-delay-2 {
+    animation-delay: 0.6s;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  

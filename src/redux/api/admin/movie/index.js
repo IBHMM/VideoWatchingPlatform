@@ -43,5 +43,7 @@ export const MovieApi = createApi({
 
 export const { 
   useGetAllMoviesQuery, 
-  useUploadMovieMutation, 
+  useUploadMovieMutation,
+  useUpdateMovieMutation,
+  useDeleteMovieMutation, 
 } = MovieApi;
