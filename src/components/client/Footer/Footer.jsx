@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
     return (
-        <section className="flex flex-col items-center justify-center w-screen p-10 gap-[30px] mt-[30px]" style={{ background: "rgb(22, 25, 52)", zIndex: "10000" }}>
+        <section className="flex flex-col items-center justify-center w-screen p-10 gap-[30px] mt-[30px]" style={{ background: "rgb(22, 25, 52)", zIndex: "100" }}>
             <div className="flex space-x-6 mb-4">
                 <Link target="_blank" rel="noopener noreferrer">
                     <FaFacebookF className="text-white text-xl hover:text-violet-600" />

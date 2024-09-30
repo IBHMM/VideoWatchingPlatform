@@ -2,20 +2,22 @@ import person from '../../../assets/icons/person.png';
 import logo from '../../../assets/icons/logo.png';
 import menu_ from '../../../assets/icons/menu.svg';
 import { Link } from 'react-router-dom';
-import arrow from '../../../assets/icons/arrow.png';
 import search from '../../../assets/icons/search.png';
 import { useSelector } from 'react-redux';
 import './navbar.css';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { Navbar_Menu } from './Navbar_Menu';
 import { Btn_main } from '../Layout/Items/Buttons/Btn_main';
 import ProfileDropDown from './Profile_Drop_Down';
+import { IoDiamondOutline } from "react-icons/io5";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
 
 export function Navbar() {
     const user = useSelector(store => store.user.user);
     const [Profile, setProfile] = useState(false);
     const [menu, setMenu] = useState(false); 
-    const [featuresVisible, setFeaturesVisible] = useState(false);
+
+    console.log(user.subscription)
 
     return (
         <nav className="flex w-screen items-center justify-center pt-3 pb-3 max-w-[2000px]" style={{ background: "rgb(0, 3, 28)" }}>
@@ -29,15 +31,7 @@ export function Navbar() {
                         </p>
                     </Link>
                     <div className='flex items-center justify-start gap-[20px] text-white  font-bold cursor-pointer max-[1030px]:hidden'>
-                        <Link to={'/client/home'} className='hover:text-violet-500 text-[12px]'>HOME</Link>
-                        <div 
-                            className='hover:text-violet-500 flex items-center justify-start gap-[0px] text-[12px]' 
-                            id='features' 
-                            onClick={() => setFeaturesVisible(!featuresVisible)}
-                        >
-                            FEATURES 
-                        </div>
-                        {featuresVisible && <Features />}
+                        <Link to={'/client/home/a'} className='hover:text-violet-500 text-[12px]'>HOME</Link>
                         <Link to={"/client/home/movies/All"} className='hover:text-violet-500 text-[12px]'>
                             VIDEOS
                         </Link>
@@ -67,38 +61,16 @@ export function Navbar() {
                         alt="" 
                         className='w-[20px] h-[20px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90 hidden max-[1030px]:flex' 
                     />
-                    <Link className='max-[1030px]:hidden' to={"/client/home/plans"}>
-                        <Btn_main text={"Subscribe"}/>
-                    </Link>
+                    {
+                        user?.subscription == "free" ? <Link className='max-[1030px]:hidden' to={"/client/home/plans"}>
+                            <Btn_main text={"Subscribe"}/>
+                        </Link> : user?.subscription == "diamond" ?
+                        <IoDiamondOutline style={{color: "aqua", fontSize: "25px"}} className=' animate-bounce'/> : 
+                        <MdOutlineWorkspacePremium style={{color: "gray", fontSize: "25px"}} className=' animate-bounce' />
+                    }
                 </div>
             </main>
         </nav>
     );
 }
 
-export function Features() {
-    return (
-        <div 
-            className='flex items-center justify-between bg-white rounded-xl max-w-[1000px] absolute top-[70px]' 
-            id='features'
-        >
-            <div className='flex flex-col items-center justify-between w-[100%] text-black p-10'>
-                <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                    <li>Feature 4</li>
-                </ul>
-            </div>
-
-            <div className='flex flex-col items-center justify-between w-[100%] text-black p-10'>
-                <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                    <li>Feature 4</li>
-                </ul>
-            </div>
-        </div>
-    );
-}

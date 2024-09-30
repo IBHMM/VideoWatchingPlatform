@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Btn_main } from "../../Layout/Items/Buttons/Btn_main";
 import { Link } from "react-router-dom";
 import { useUpdateUserMutation } from "../../../../redux/api/admin/user";
 import { useIncreaseViewMutation } from "../../../../redux/api/client/movie";
+import { setUser } from '../../../../redux/slices/user/index'
 
 export function VideoContainer({movie}) {
     const [show, setShow] = useState(true);
-    const [updateUser] = useUpdateUserMutation();
+    const [updateUser, {data, isSuccess}] = useUpdateUserMutation();
     const [IncreaseView] = useIncreaseViewMutation();
     const user = useSelector(state => state.user.user);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const updateViews = async () => {
@@ -38,6 +40,12 @@ export function VideoContainer({movie}) {
 
         return () => clearTimeout(timer);
     }, [movie, user, updateUser, IncreaseView]);
+
+    useEffect(() => {
+        if (isSuccess && data.user) {
+            dispatch(setUser(data.user));
+        }
+    }, [isSuccess]);
 
     return (
         <div className="w-screen flex items-center justify-center mt-10 max-w-[2000px]">

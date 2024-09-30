@@ -8,7 +8,7 @@ export function Profile() {
   return (
     <main className="flex flex-col items-start justify-between w-screen">
       <div className="flex flex-col items-center justify-center w-full " style={{ background: "rgb(25, 28, 51)" }}> 
-        <div className="flex flex-col items-start justify-between w-[90%]">
+        <div className="flex flex-col items-start justify-between w-[90%] max-sm:w-full">
           <div className="flex items-center justify-start gap-5 w-full p-10">
             <img
               src={user?.thumbnail}
@@ -18,7 +18,7 @@ export function Profile() {
             <p className="text-[130%] text-white">{user?.username}</p>
 
             <button className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold px-4 py-2 rounded-lg ml-5">
-              <FaCrown className="text-yellow-400" /> Upgrade Premium
+              <FaCrown className="text-yellow-400" /> Upgrade
             </button>
           </div>
 
@@ -39,15 +39,6 @@ export function Profile() {
               }
             >
               History
-            </NavLink>
-
-            <NavLink
-              to="/client/home/profile/playlist"
-              className={({ isActive }) =>
-                `text-white text-[13px] pb-1 ${isActive ? "border-b-2 border-purple-500" : "hover:text-purple-500"}`
-              }
-            >
-              Playlist
             </NavLink>
 
             <NavLink

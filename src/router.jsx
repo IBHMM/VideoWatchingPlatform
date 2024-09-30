@@ -21,6 +21,9 @@ import { Billing } from './components/client/Plans/Billing/Billing';
 import { VideoMain } from './pages/client/Home/Watch/VideoMain';
 import { MoviesMain } from './pages/client/Home/Movies/MovieMain';
 import { MoviesContainer } from './components/client/Movie/MoviesContainer/MoviesContainer';
+import { History } from './components/client/Profile/Settings/Components/History/History';
+import { Liked } from './components/client/Profile/Settings/Components/Liked/Liked';
+import { WatchList } from './components/client/Profile/Settings/Components/WatchList/Watchlist';
 
 const router = createBrowserRouter([
     {
@@ -73,19 +76,15 @@ const router = createBrowserRouter([
                         children: [
                             {
                                 path: 'favourite',
-                                element: <h1>Favourite</h1>
+                                element: <Liked />
                             },
                             {
                                 path: 'history',
-                                element: <h1>History</h1>
-                            },
-                            {
-                                path: 'playlist',
-                                element: <h1>Playlist</h1>
+                                element: <History />
                             },
                             {
                                 path: 'watchlist',
-                                element: <h1>Watchlist</h1>
+                                element: <WatchList />
                             },
                             {
                                 path: 'settings',
@@ -151,7 +150,5 @@ const router = createBrowserRouter([
         element: <NotFound />
     }
 ]);
-
-
 
 export {router}

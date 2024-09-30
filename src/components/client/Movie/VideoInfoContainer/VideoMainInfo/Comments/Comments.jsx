@@ -12,6 +12,7 @@ export function Comments({ movie }) {
     const [editRating, setEditRating] = useState(0);
     const [editReviewText, setEditReviewText] = useState('');
     const user = useSelector(state => state.user.user);
+    const [commenterror, setCommentError] = useState(false);
     
     const [AddComment, { isLoading, isError, isSuccess }] = useAddCommentMutation();
     const [deleteComment, { isLoading: DisLoading }] = useDeleteCommentMutation();
@@ -26,6 +27,14 @@ export function Comments({ movie }) {
 
         if (!user) {
             message.error("Please login to submit a review");
+            return;
+        }
+
+        if (rating === 0 || !reviewText) {
+            setCommentError(true);
+            setTimeout(() => {
+                setCommentError(false);
+            }, 500);
             return;
         }
 
@@ -143,8 +152,7 @@ export function Comments({ movie }) {
                         {isLoading ? 'Submitting...' : 'Submit'}
                     </button>
 
-                    {isError && <p className="text-red-500 mt-2">Failed to submit comment. Please try again.</p>}
-                    {isSuccess && <p className="text-green-500 mt-2">Comment submitted successfully!</p>}
+                    {commenterror ? <p className='text-red-500 mt-5'>You hav to give both score and reviewtext for submiting comment</p> : <></>}
                 </form>
 
                 <div className="mt-10 w-full max-h-[400px] overflow-y-scroll">
