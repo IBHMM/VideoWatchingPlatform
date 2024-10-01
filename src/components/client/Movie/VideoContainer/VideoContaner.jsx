@@ -27,7 +27,7 @@ export function VideoContainer({movie}) {
                 }
             } else {
                 setShow(false);
-                if (!user.History.some(m => m.id == movie.id)){
+                if (!user?.History.some(m => m.id == movie.id)){
                     await updateUser({ userId: user?.id, updatedData: { History: [...(user?.History || []), movie] } });
                 }
                 await IncreaseView(movie.id);
@@ -39,11 +39,11 @@ export function VideoContainer({movie}) {
         }, 100);
 
         return () => clearTimeout(timer);
-    }, [movie, user, updateUser, IncreaseView]);
+    }, []);
 
     useEffect(() => {
-        if (isSuccess && data.user) {
-            dispatch(setUser(data.user));
+        if (isSuccess && data?.user) {
+            dispatch(setUser(data?.user));
         }
     }, [isSuccess]);
 

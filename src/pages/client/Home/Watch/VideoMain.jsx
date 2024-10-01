@@ -6,7 +6,7 @@ import { useGetVideoByIdQuery } from "../../../../redux/api/client/movie";
 
 export function VideoMain() {
     const { movieid } = useParams();
-    const { data, isLoading, isError, isSuccess } = useGetVideoByIdQuery(movieid);
+    const { data, isLoading, isError, isSuccess, refetch } = useGetVideoByIdQuery(movieid);
 
     return (
         <>
@@ -14,7 +14,7 @@ export function VideoMain() {
                 data && !isLoading && !isError ? (
                     <>
                         <VideoContainer movie={data} />
-                        <VideoInfoMain movie={data} />
+                        <VideoInfoMain movie={data} refetch={refetch} />
                     </>
                 ) : <Loader />
             }

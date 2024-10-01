@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import MovieCard from "../../NewRelease/NewRelease";
 import "./MoviesContainer.css";
 import { genres, years } from "../../../../constants/client.constants";
-import Skeleton from "../../Layout/Animation/Skeleton/Movies";
+import Skeleton from "../../Layout/Animation/Skeleton/Movie/Movies";
 
 export function MoviesContainer() {
     const [visibleCard, setVisibleCard] = useState(null);

@@ -11,13 +11,13 @@ import { Btn_main } from '../Layout/Items/Buttons/Btn_main';
 import ProfileDropDown from './Profile_Drop_Down';
 import { IoDiamondOutline } from "react-icons/io5";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
+import { Search } from '../Search/Search';
 
 export function Navbar() {
     const user = useSelector(store => store.user.user);
+    const [open, setOpen] = useState(false);
     const [Profile, setProfile] = useState(false);
     const [menu, setMenu] = useState(false); 
-
-    console.log(user.subscription)
 
     return (
         <nav className="flex w-screen items-center justify-center pt-3 pb-3 max-w-[2000px]" style={{ background: "rgb(0, 3, 28)" }}>
@@ -35,16 +35,21 @@ export function Navbar() {
                         <Link to={"/client/home/movies/All"} className='hover:text-violet-500 text-[12px]'>
                             VIDEOS
                         </Link>
-                        <div className='hover:text-violet-500 text-[12px]'>
+                        <Link to={'/client/home/contact'} className='hover:text-violet-500 text-[12px]'>
                             CONTACT US
-                        </div>
+                        </Link>
                         <div className='hover:text-violet-500 text-[12px]'>
                             ABOUT US
                         </div>
                     </div>
                 </div>
                 <div className='flex items-center justify-end gap-[20px]'>
-                    <img src={search} alt="" className='w-[23px] h-[23px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90' />
+                    <img
+                        onClick={() => setOpen(true)}
+                        src={search} alt="" 
+                        className='w-[23px] h-[23px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90' 
+                    />
+                    {open && <Search setOpen={setOpen} />}
                     <div className='flex items-center justify-center gap-[5px]'>
                         {user == undefined ? 
                             <Link to={'/client/registration/signin'} className='flex items-center justify-center gap-[5px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90'>
@@ -62,7 +67,7 @@ export function Navbar() {
                         className='w-[20px] h-[20px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90 hidden max-[1030px]:flex' 
                     />
                     {
-                        user?.subscription == "free" ? <Link className='max-[1030px]:hidden' to={"/client/home/plans"}>
+                        user?.subscription == "free" || user?.subscription == null ? <Link className='max-[1030px]:hidden' to={"/client/home/plans"}>
                             <Btn_main text={"Subscribe"}/>
                         </Link> : user?.subscription == "diamond" ?
                         <IoDiamondOutline style={{color: "aqua", fontSize: "25px"}} className=' animate-bounce'/> : 

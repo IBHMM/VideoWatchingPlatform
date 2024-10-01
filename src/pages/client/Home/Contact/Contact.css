@@ -1,0 +1,52 @@
+.top {
+    background-image: url("https://streamvid.gavencreative.com/wp-content/uploads/2022/11/tyson-moultrie-BQTHOGNHo08-unsplash.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+}
+
+.top textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+}
+
+.top input:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+}
+
+.top textarea:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid white;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-section {
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.fade-in-left {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.fade-in-right {
+    animation: fadeIn 1.5s ease-in-out;
+    animation-delay: 0.2s;
+}

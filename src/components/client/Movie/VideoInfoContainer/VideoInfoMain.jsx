@@ -1,12 +1,12 @@
 import { Poster } from "./Poster/Poster";
 import { VideoMainInfo } from "./VideoMainInfo/VideoMainInfo";
 
-export function VideoInfoMain({movie}) {
+export function VideoInfoMain({movie, refetch}) {
 
     return (
         <div className="w-screen flex items-center justify-center mt-10 max-w-[2000px]">
             <div className="flex items-start justify-center w-[90%] max-[1100px]:flex-col">
-                <Poster movie={movie}/>
+                <Poster movie={movie} refetch={refetch} />
                 <VideoMainInfo movie={movie}/>
             </div>
         </div>

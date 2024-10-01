@@ -1,6 +1,6 @@
 import React from 'react';
 import './PulsingSquares.css'; 
-import poster from '../../../../../assets/images/skeleton.jpg'
+import poster from '../../../../../../assets/images/skeleton.jpg'
 
 const PulsingSquares = () => {
   const squares = Array.from({ length: 10 });

@@ -1,3 +1,4 @@
+import { useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import { Menu, Dropdown, Avatar, message } from "antd";
 import {
@@ -7,16 +8,20 @@ import {
   FaUser,
   FaCog,
   FaSignOutAlt,
+  FaRegListAlt,
 } from "react-icons/fa";
 import { useLogoutMutation } from "../../../redux/api/Authentication";
 import { Link } from "react-router-dom";
+import { setUser } from '../../../redux/slices/user';
 
 const ProfileDropDown = ({ image, username }) => {
   const [logout, { isLoading, isError, isSuccess }] = useLogoutMutation();
+  const dispatch = useDispatch();
 
   const handleLogout = async () => {
     try {
-      logout();
+      document.querySelector("body").style.opacity = "0.4";
+      await logout(); 
     } catch (error) {
       console.error("Failed to logout", error);
     }
@@ -24,7 +29,8 @@ const ProfileDropDown = ({ image, username }) => {
 
   useEffect(() => {
     if (isSuccess) {
-      window.location.reload(); 
+      document.querySelector("body").style.opacity = "1";
+      dispatch(setUser(null));
     }
   }, [isSuccess]);
 
@@ -77,6 +83,16 @@ const ProfileDropDown = ({ image, username }) => {
             <span className="flex text-white items-center px-4 py-2 hover:text-violet-500 transition-all cursor-pointer rounded-lg">
               <Link className="flex items-center justify-start" to={"/client/home/profile/settings"} >
                 <FaUser className="mr-2" /> My Profile
+              </Link>
+            </span>
+          ),
+        },
+        {
+          key: '5',
+          label: (
+            <span className="flex text-white items-center px-4 py-2 hover:text-violet-500 transition-all cursor-pointer rounded-lg">
+              <Link className="flex items-center justify-start" to={"/client/home/profile/settings"} >
+                <FaRegListAlt  className="mr-2" />  WatchList
               </Link>
             </span>
           ),

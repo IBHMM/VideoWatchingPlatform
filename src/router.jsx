@@ -24,6 +24,8 @@ import { MoviesContainer } from './components/client/Movie/MoviesContainer/Movie
 import { History } from './components/client/Profile/Settings/Components/History/History';
 import { Liked } from './components/client/Profile/Settings/Components/Liked/Liked';
 import { WatchList } from './components/client/Profile/Settings/Components/WatchList/Watchlist';
+import { Contact } from './pages/client/Home/Contact/Contact';
+import { About } from './pages/client/Home/About/About';
 
 const router = createBrowserRouter([
     {
@@ -117,6 +119,14 @@ const router = createBrowserRouter([
                             element: <MoviesContainer />
                           }
                         ]
+                    },
+                    {
+                        path: "contact",
+                        element: <Contact />
+                    },
+                    {
+                        path: "about",
+                        element: <About />
                     }
                 ]
             }

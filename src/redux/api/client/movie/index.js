@@ -62,6 +62,25 @@ export const UserMovieApi = createApi({
       }),
       invalidatesTags: ["Comment", "Video"],
     }),
+
+    likemovie: builder.mutation({
+      query: ({videoId}) => ({
+        url: `/like`,
+        method: 'POST',
+        body: {videoId}
+      }),
+      invalidatesTags: ["Video"],
+    }),
+
+    watchlist: builder.mutation({
+      query: ({videoId}) => ({
+        url: `/watchlist`,
+        method: 'POST',
+        body: {videoId}
+      }),
+      invalidatesTags: ["Video"],
+    }),
+
   }),
 });
 
@@ -72,5 +91,7 @@ export const {
   useAddCommentMutation,
   useUpdateCommentMutation,
   useDeleteCommentMutation,
-  useIncreaseViewMutation
+  useIncreaseViewMutation,
+  useLikemovieMutation,
+  useWatchlistMutation,
 } = UserMovieApi;

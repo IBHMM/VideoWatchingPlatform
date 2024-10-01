@@ -69,7 +69,18 @@ export const RegistrationApi = createApi({
         body: credentials,
       }),
     }),
+
+    contact: builder.mutation({
+      query: (text) => ({
+        url: '/contact',
+        method: 'POST',
+        body: {
+          text,
+        },
+      }),
+    }),
+
   }),
 });
 
-export const { useLoginMutation, useSignupMutation, useRefreshMutation, useGetuserQuery, useGetcodeMutation, useVerifyMutation, useChangeMutation, useLogoutMutation } = RegistrationApi;
+export const { useLoginMutation, useSignupMutation, useRefreshMutation, useGetuserQuery, useGetcodeMutation, useVerifyMutation, useChangeMutation, useLogoutMutation, useContactMutation } = RegistrationApi;

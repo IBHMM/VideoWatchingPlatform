@@ -27,9 +27,11 @@ export const NewRelease = () => {
                         300: { slidesPerView: 2 },
                         500: { slidesPerView: 2 },
                         640: { slidesPerView: 3 },
-                        768: { slidesPerView: 4 },
-                        1024: { slidesPerView: 5 },
-                        1280: { slidesPerView: 6 },
+                        768: { slidesPerView: 3 },
+                        1000: { slidePreview: 4 },
+                        1200: { slidesPerView: 5 },
+                        1500: { slidesPerView: 5 },
+                        1600: { slidesPerView: 6 },
                     }}
                 >
                     {NewReleased.map((movie, index) => (
