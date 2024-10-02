@@ -127,6 +127,10 @@ const router = createBrowserRouter([
                     {
                         path: "about",
                         element: <About />
+                    },
+                    {
+                        path: '*',
+                        element: <NotFound />
                     }
                 ]
             }
@@ -155,10 +159,6 @@ const router = createBrowserRouter([
             }
         ],
     },
-    {
-        path: '*',
-        element: <NotFound />
-    }
 ]);
 
 export {router}

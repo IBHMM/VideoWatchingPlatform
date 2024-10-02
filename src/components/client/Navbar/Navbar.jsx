@@ -67,7 +67,7 @@ export function Navbar() {
                         className='w-[20px] h-[20px] cursor-pointer transition-transform duration-200 ease-in-out transform hover:scale-110 active:scale-90 hidden max-[1030px]:flex' 
                     />
                     {
-                        user?.subscription == "free" || user?.subscription == null ? <Link className='max-[1030px]:hidden' to={"/client/home/plans"}>
+                        window.innerWidth > 1030 && user?.subscription == "free" || user?.subscription == null ? <Link className='max-[1030px]:hidden' to={"/client/home/plans"}>
                             <Btn_main text={"Subscribe"}/>
                         </Link> : user?.subscription == "diamond" ?
                         <IoDiamondOutline style={{color: "aqua", fontSize: "25px"}} className=' animate-bounce'/> : 

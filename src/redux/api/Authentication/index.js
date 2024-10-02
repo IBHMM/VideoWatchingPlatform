@@ -80,7 +80,15 @@ export const RegistrationApi = createApi({
       }),
     }),
 
+    subscribe: builder.mutation({
+      query: (credentials) => ({
+        url: '/subscribe',
+        method: 'POST',
+        body: credentials,
+      }),
+    }),
+
   }),
 });
 
-export const { useLoginMutation, useSignupMutation, useRefreshMutation, useGetuserQuery, useGetcodeMutation, useVerifyMutation, useChangeMutation, useLogoutMutation, useContactMutation } = RegistrationApi;
+export const { useLoginMutation, useSignupMutation, useRefreshMutation, useGetuserQuery, useGetcodeMutation, useVerifyMutation, useChangeMutation, useLogoutMutation, useContactMutation, useSubscribeMutation } = RegistrationApi;

@@ -114,7 +114,7 @@ export const EditorsPick = [
     genre: "Comedy",
     likes: 10,
     isLive: true,
-    id: "dfe72b28-2f46-4f5f-89c4-8f17365488a2" // From "John Wich 4"
+    id: "dfe72b28-2f46-4f5f-89c4-8f17365488a2" 
   },
   {
     poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/harry-cunningham-EPi3TR123-480x250.jpg",
@@ -125,7 +125,7 @@ export const EditorsPick = [
     genre: "Education Fation",
     likes: 4,
     isLive: true,
-    id: "a5a72845-8712-4389-ae6f-8e5c2a12d8a7" // From "Spider Man Memo"
+    id: "a5a72845-8712-4389-ae6f-8e5c2a12d8a7" 
   },
   {
     poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/xuan-nguyen-LRAHyIUjFps-unsplash-480x250.jpg",
@@ -136,7 +136,7 @@ export const EditorsPick = [
     genre: "Music Nature",
     likes: 8,
     isLive: false,
-    id: "aa6dca45-8f29-411d-934d-bc423bf3ff23" // From "The White House"
+    id: "aa6dca45-8f29-411d-934d-bc423bf3ff23" 
   },
   {
     poster: "https://streamvid.gavencreative.com/wp-content/uploads/2023/06/sergey-semin-Oa7QSM3Stpc-unsplash-1-480x250.jpg",

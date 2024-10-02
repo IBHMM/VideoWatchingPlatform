@@ -11,12 +11,13 @@ import {
   FaRegListAlt,
 } from "react-icons/fa";
 import { useLogoutMutation } from "../../../redux/api/Authentication";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setUser } from '../../../redux/slices/user';
 
 const ProfileDropDown = ({ image, username }) => {
   const [logout, { isLoading, isError, isSuccess }] = useLogoutMutation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
@@ -31,6 +32,7 @@ const ProfileDropDown = ({ image, username }) => {
     if (isSuccess) {
       document.querySelector("body").style.opacity = "1";
       dispatch(setUser(null));
+      navigate("/client/home/a");
     }
   }, [isSuccess]);
 

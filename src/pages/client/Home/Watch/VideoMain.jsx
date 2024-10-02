@@ -3,6 +3,7 @@ import { VideoInfoMain } from "../../../../components/client/Movie/VideoInfoCont
 import { VideoContainer } from "../../../../components/client/Movie/VideoContainer/VideoContaner";
 import { Loader } from "../../../../components/client/Layout/Animation/Loader";
 import { useGetVideoByIdQuery } from "../../../../redux/api/client/movie";
+import MovieSkeleton from "../../../../components/client/Layout/Animation/Skeleton/Video/Video";
 
 export function VideoMain() {
     const { movieid } = useParams();
@@ -16,7 +17,7 @@ export function VideoMain() {
                         <VideoContainer movie={data} />
                         <VideoInfoMain movie={data} refetch={refetch} />
                     </>
-                ) : <Loader />
+                ) : <MovieSkeleton />
             }
         </>
     );

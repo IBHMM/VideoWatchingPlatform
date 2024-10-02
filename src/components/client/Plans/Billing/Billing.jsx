@@ -1,8 +1,27 @@
-import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useSubscribeMutation } from "../../../../redux/api/Authentication";
+import { message } from "antd";
+import { setUser } from '../../../../redux/slices/user';
 
 export const Billing = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [cvc, setCVC] = useState("");
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [address1, setAddress1] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [country, setCountry] = useState("United States");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [confirmEmail, setConfirmEmail] = useState("");
+
+  const [Subscribe, {isLoading, isError, isSuccess, data}] = useSubscribeMutation();
+  const dispatch = useDispatch();
 
   const handleCardNumberChange = (e) => {
     let value = e.target.value.replace(/\D/g, ""); 
@@ -19,6 +38,31 @@ export const Billing = () => {
     setCVC(value);
   };
 
+  const handleSubscribe = (e) => {
+    e.preventDefault()
+
+    if (!cardNumber || !cvc || !firstName || !lastName || !address1 || !city || !state || !postalCode || !country || !phone || !email || !confirmEmail) {
+      message.error("Please fill in all fields");
+      return;
+    }
+    
+    if (email !== confirmEmail) {
+      message.error("Emails do not match");
+      return;
+    }
+
+    const subscriptionPlan = localStorage.getItem("plan")
+    Subscribe({subscriptionPlan});
+  }
+
+  useEffect(() => {
+    if (isSuccess) {
+      message.success("Subscription successful"); 
+      dispatch(setUser(data));
+    }
+  }, [isSuccess])
+
+  
   return (
     <div className="text-white min-h-screen flex items-center justify-center w-screen">
       <div className="max-w-4xl mt-10 px-6 py-8 rounded-lg min-w-[80%]">
@@ -54,8 +98,10 @@ export const Billing = () => {
               <div>
                 <label htmlFor="firstName" className="block text-sm">First Name</label>
                 <input
+                  required={true}
                   type="text"
                   id="firstName"
+                  onChange={e => setFirstName(e.target.value)}
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
               </div>
@@ -63,8 +109,10 @@ export const Billing = () => {
               <div>
                 <label htmlFor="lastName" className="block text-sm">Last Name</label>
                 <input
+                  required={true}
                   type="text"
                   id="lastName"
+                  onChange={e => setLastName(e.target.value)}
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
               </div>
@@ -72,8 +120,10 @@ export const Billing = () => {
               <div>
                 <label htmlFor="address1" className="block text-sm">Address 1</label>
                 <input
+                  required={true}
                   type="text"
                   id="address1"
+                  onChange={e => setAddress1(e.target.value)}
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
               </div>
@@ -81,8 +131,10 @@ export const Billing = () => {
               <div>
                 <label htmlFor="address2" className="block text-sm">Address 2</label>
                 <input
+                  required={true}
                   type="text"
                   id="address2"
+                  onChange={e => setAddress2(e.target.value)}
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
               </div>
@@ -90,8 +142,10 @@ export const Billing = () => {
               <div>
                 <label htmlFor="city" className="block text-sm">City</label>
                 <input
+                  required={true}
                   type="text"
                   id="city"
+                  onChange={e => setCity(e.target.value)}
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
               </div>
@@ -100,16 +154,20 @@ export const Billing = () => {
                 <div className="w-1/2">
                   <label htmlFor="state" className="block text-sm">State</label>
                   <input
+                    required={true}
                     type="text"
                     id="state"
+                    onChange={e => setState(e.target.value)}
                     className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                   />
                 </div>
                 <div className="w-1/2">
                   <label htmlFor="postalCode" className="block text-sm">Postal Code</label>
                   <input
+                    required={true}
                     type="text"
                     id="postalCode"
+                    onChange={e => setPostalCode(e.target.value)}
                     className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                   />
                 </div>
@@ -119,6 +177,7 @@ export const Billing = () => {
                 <label htmlFor="country" className="block text-sm">Country</label>
                 <select
                   id="country"
+                  onChange={e => setCountry(e.target.value)}
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 >
                   <option>United States</option>
@@ -128,7 +187,9 @@ export const Billing = () => {
               <div>
                 <label htmlFor="phone" className="block text-sm">Phone</label>
                 <input
+                  required={true}
                   type="text"
+                  onChange={e => setPhone(e.target.value)}
                   id="phone"
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
@@ -137,6 +198,8 @@ export const Billing = () => {
               <div>
                 <label htmlFor="email" className="block text-sm">Email Address</label>
                 <input
+                  required={true}
+                  onChange={e => setEmail(e.target.value)}
                   type="email"
                   id="email"
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
@@ -146,7 +209,9 @@ export const Billing = () => {
               <div>
                 <label htmlFor="confirmEmail" className="block text-sm">Confirm Email</label>
                 <input
+                  required={true}
                   type="email"
+                  onChange={e => setConfirmEmail(e.target.value)}
                   id="confirmEmail"
                   className="w-full bg-[#12123a] border border-gray-600 rounded-md px-4 py-2 text-sm"
                 />
@@ -154,13 +219,13 @@ export const Billing = () => {
             </form>
           </div>
 
-          {/* Payment Information */}
           <div className="flex-1">
             <h3 className="text-lg font-bold mb-4">Payment Information We Accept</h3>
             <form className="space-y-4">
               <div>
                 <label htmlFor="cardNumber" className="block text-sm">Card Number</label>
                 <input
+                  required={true}
                   type="text"
                   id="cardNumber"
                   value={cardNumber}
@@ -208,6 +273,7 @@ export const Billing = () => {
               <div>
                 <label htmlFor="cvc" className="block text-sm">Security Code (CVC)</label>
                 <input
+                  required={true}
                   type="text"
                   id="cvc"
                   value={cvc}
@@ -217,7 +283,7 @@ export const Billing = () => {
                 />
               </div>
 
-              <button className="w-full bg-violet-600 text-white py-2 rounded-md hover:bg-violet-500 transition-colors">
+              <button onClick={handleSubscribe} className="w-full bg-violet-600 text-white py-2 rounded-md hover:bg-violet-500 transition-colors">
                 Submit and Check Out
               </button>
             </form>

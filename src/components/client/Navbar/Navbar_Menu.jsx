@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './navbar.css';
-import logo from '../../../assets/icons/logo.png';
+import logo from '../../../assets/icons/logo.png';;
 
 export const Navbar_Menu = () => {
 
@@ -14,19 +14,19 @@ export const Navbar_Menu = () => {
                     </p>
                 </Link>
                 <div className='flex flex-col items-start justify-start gap-[30px] text-white ml-[20px] font-bold cursor-pointer' id='menu'>
-                    <Link to={'/client/home'} className='hover:text-violet-500 text-[15px]' id='menu'>HOME</Link>
-                    <div className='hover:text-violet-500 text-[15px]' id='menu'>
+                    <Link to={'/client/home/a'} className='hover:text-violet-500 text-[15px]' id='menu'>HOME</Link>
+                    <Link to={'/client/home/movies/All'} className='hover:text-violet-500 text-[15px]' id='menu'>
                         VIDEOS
-                    </div>
-                    <div className='hover:text-violet-500 text-[15px]' id='menu'>
+                    </Link>
+                    <Link to={'/client/home/contact'} className='hover:text-violet-500 text-[15px]' id='menu'>
                         CONTACT US
-                    </div>
-                    <div className='hover:text-violet-500 text-[15px]' id='menu'>
+                    </Link>
+                    <Link to={'/client/home/about'} className='hover:text-violet-500 text-[15px]' id='menu'>
                         ABOUT US
-                    </div>
-                    <button className='subscribe-button' id='menu'>
+                    </Link>
+                    <Link to={"/client/home/plans"} className='subscribe-button' id='menu'>
                         Subscribe
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>
