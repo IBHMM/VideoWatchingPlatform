@@ -38,9 +38,9 @@ export function Navbar() {
                         <Link to={'/client/home/contact'} className='hover:text-violet-500 text-[12px]'>
                             CONTACT US
                         </Link>
-                        <div className='hover:text-violet-500 text-[12px]'>
+                        <Link to={'/client/home/about'} className='hover:text-violet-500 text-[12px]'>
                             ABOUT US
-                        </div>
+                        </Link>
                     </div>
                 </div>
                 <div className='flex items-center justify-end gap-[20px]'>
