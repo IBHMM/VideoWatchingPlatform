@@ -81,6 +81,15 @@ export const UserMovieApi = createApi({
       invalidatesTags: ["Video"],
     }),
 
+    toggleCommentLike: builder.mutation({
+      query: (cridentials) => ({
+        url: `/videos/togglecomment`,
+        method: "PATCH",
+        body: cridentials,
+      }),
+      invalidatesTags: ["Comment", "Video"],
+    }),
+
   }),
 });
 
@@ -94,4 +103,5 @@ export const {
   useIncreaseViewMutation,
   useLikemovieMutation,
   useWatchlistMutation,
+  useToggleCommentLikeMutation,
 } = UserMovieApi;

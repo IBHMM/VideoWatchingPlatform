@@ -7,7 +7,7 @@ import { useIncreaseViewMutation } from "../../../../redux/api/client/movie";
 import { setUser } from '../../../../redux/slices/user/index'
 
 export function VideoContainer({movie}) {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
     const [updateUser, {data, isSuccess}] = useUpdateUserMutation();
     const [IncreaseView] = useIncreaseViewMutation();
     const user = useSelector(state => state.user.user);

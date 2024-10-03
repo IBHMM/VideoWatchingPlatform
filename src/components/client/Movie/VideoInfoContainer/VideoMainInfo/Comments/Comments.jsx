@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useAddCommentMutation, useDeleteCommentMutation, useUpdateCommentMutation } from '../../../../../../redux/api/client/movie';
+import { useAddCommentMutation, useDeleteCommentMutation, useToggleCommentLikeMutation, useUpdateCommentMutation } from '../../../../../../redux/api/client/movie';
 import { useSelector } from 'react-redux';
 import { message } from 'antd';
-import { AiFillEdit, AiFillDelete } from 'react-icons/ai'; 
+import { AiFillEdit, AiFillDelete, AiFillDislike, AiFillLike } from 'react-icons/ai'; 
 import { Loader } from '../../../../Layout/Animation/Loader';
 
 export function Comments({ movie }) {
@@ -17,6 +17,7 @@ export function Comments({ movie }) {
     const [AddComment, { isLoading, isError, isSuccess }] = useAddCommentMutation();
     const [deleteComment, { isLoading: DisLoading }] = useDeleteCommentMutation();
     const [updateComment, { isLoading: UisLoading, isSuccess: UisSuccess }] = useUpdateCommentMutation();
+    const [TComments, { isLoading: CisLoading, isSuccess: CisSuccess, isError: CisError }] = useToggleCommentLikeMutation();
 
     const handleRating = (rate) => {
         setRating(rate);
@@ -27,6 +28,8 @@ export function Comments({ movie }) {
 
         if (!user) {
             message.error("Please login to submit a review");
+            setRating(0);
+            setReviewText('');
             return;
         }
 
@@ -75,6 +78,21 @@ export function Comments({ movie }) {
     const handleEditRating = (rate) => {
         setEditRating(rate);
     };
+
+    const handleToggleLike = (review, isLiking) => {
+        if (!user) {
+            message.error("Please login to like/dislike a review");
+            return;
+        }
+        if (isLiking && review.comment.likedusers.some(u => u.id == user?.id)) return;
+        if (!isLiking && review.comment.dislikedusers.some(u => u.id == user?.id)) return;  
+
+        console.log(isLiking && review.comment.likedusers.some(u => u.id == user?.id));
+        console.log(!isLiking && review.comment.dislikedusers.some(u => u.id == user?.id));
+
+        const cridentials = {videoId : movie.id, commentId : review._id, isLiking};
+        TComments(cridentials);
+    }
 
     useEffect(() => {
         setEdit(null); 
@@ -244,6 +262,20 @@ export function Comments({ movie }) {
                                     ) : (
                                         <div>{review.comment?.content}</div>
                                     )}
+                                </div>
+
+                                <div className="flex items-center gap-4 mt-4">
+                                    <AiFillLike
+                                        className={`cursor-pointer ${review.comment.likedusers.some(u => u.id == user?.id) ? 'text-violet-700' : 'text-gray-400'}`}
+                                        onClick={() => handleToggleLike(review, true)}
+                                    />
+                                    <span>{review.comment.likedusers.length}</span>
+
+                                    <AiFillDislike
+                                        className={`cursor-pointer ${review.comment.dislikedusers.some(u => u.id == user?.id) ? 'text-violet-700' : 'text-gray-400'}`}
+                                        onClick={() => handleToggleLike(review, false)}
+                                    />
+                                    <span>{review.comment.dislikedusers.length}</span>
                                 </div>
                             </div>
                         </div>
