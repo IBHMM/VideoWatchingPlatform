@@ -1,4 +1,4 @@
-import {createBrowserRouter} from 'react-router-dom'
+import {createBrowserRouter, Navigate} from 'react-router-dom'
 import { Signin } from './pages/client/Registration/Signin';
 import { Signup } from './pages/client/Registration/Signup';
 import NotFound from './pages/NotFound'
@@ -28,6 +28,10 @@ import { Contact } from './pages/client/Home/Contact/Contact';
 import { About } from './pages/client/Home/About/About';
 
 const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Navigate to="/client/home/a" />, 
+    },
     {
         path: '/client',
         element: <Main/>,
