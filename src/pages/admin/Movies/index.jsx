@@ -4,7 +4,6 @@ import { useUploadMovieMutation } from '../../../redux/api/admin/movie';
 import { useGetAllVideosQuery } from '../../../redux/api/client/movie';
 import { UploadOutlined } from '@ant-design/icons';
 import moment from 'moment';
-import './MovieMain.css'; 
 import { genreOptions } from '../../../constants/admin.constants';
 import { Loader } from '../../../components/admin/Layout/Animation/Loading';
 
