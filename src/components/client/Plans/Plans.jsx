@@ -14,10 +14,10 @@ export function Plans() {
   useEffect(() => {
     const handleUser = () => {
       setTimeout(() => {
-        if (!user) {
+        if (!user?.id) {
           message.warning("You have to Login First")
         }
-      }, 100);
+      }, 1500);
     };
 
     handleUser();

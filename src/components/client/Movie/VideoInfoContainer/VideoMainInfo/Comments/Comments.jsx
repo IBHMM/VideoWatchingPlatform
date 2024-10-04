@@ -86,10 +86,6 @@ export function Comments({ movie }) {
         }
         if (isLiking && review.comment.likedusers.some(u => u.id == user?.id)) return;
         if (!isLiking && review.comment.dislikedusers.some(u => u.id == user?.id)) return;  
-
-        console.log(isLiking && review.comment.likedusers.some(u => u.id == user?.id));
-        console.log(!isLiking && review.comment.dislikedusers.some(u => u.id == user?.id));
-
         const cridentials = {videoId : movie.id, commentId : review._id, isLiking};
         TComments(cridentials);
     }
@@ -221,7 +217,7 @@ export function Comments({ movie }) {
                                                 </div>
                                             </div>
                                         </div>
-                                        {user?.email === review.user.email && (
+                                        {user?.name === review.user.name && (
                                             <div className="flex items-center space-x-3">
                                                 <AiFillEdit
                                                     className="text-violet-500 cursor-pointer"

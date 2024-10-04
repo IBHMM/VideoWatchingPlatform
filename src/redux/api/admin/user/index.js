@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const UserApi = createApi({
     reducerPath: 'userApi',
     baseQuery: fetchBaseQuery({
-      baseUrl: 'http://localhost:3000/api/v1/admin',
+      baseUrl: 'https://movon-server-1.onrender.com/api/v1/admin',
       credentials: 'include',
     }),
     tagTypes: ['User'],

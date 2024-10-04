@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { FaCrown } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import { IoDiamondOutline } from "react-icons/io5";
+import { MdOutlineWorkspacePremium } from "react-icons/md";
 
 export function Profile() {
   const user = useSelector((state) => state.user.user);
@@ -17,9 +19,15 @@ export function Profile() {
             />
             <p className="text-[130%] text-white">{user?.username}</p>
 
-            <button className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold px-4 py-2 rounded-lg ml-5">
-              <FaCrown className="text-yellow-400" /> Upgrade
-            </button>
+              {
+                user?.subscription == "free" ? 
+                <button className="flex items-center gap-2 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold px-4 py-2 rounded-lg ml-5">
+                  <FaCrown className="text-yellow-400" /> {"Upgrade"} 
+                </button> :
+                user?.subscription == "diamond" ?
+                <IoDiamondOutline style={{color: "aqua", fontSize: "25px"}} className=' animate-bounce'/> : 
+                <MdOutlineWorkspacePremium style={{color: "gray", fontSize: "25px"}} className=' animate-bounce' />
+              }
           </div>
 
           <div className="flex items-center justify-start gap-8 w-full px-10">

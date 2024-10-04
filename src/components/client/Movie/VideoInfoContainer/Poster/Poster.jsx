@@ -3,6 +3,7 @@ import { FaThumbsUp, FaShare, FaPlus } from 'react-icons/fa';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLikemovieMutation, useWatchlistMutation } from '../../../../../redux/api/client/movie';
 import { setUser } from '../../../../../redux/slices/user';
+import { message } from 'antd';
 
 export function Poster({ movie }) {
 
@@ -14,10 +15,18 @@ export function Poster({ movie }) {
     const dispatch = useDispatch();
     
     const handleLike = () => {
+        if (!user) {
+            message.error('Please login to like this movie');
+            return;
+        }
         ToggleLike({videoId: movie.id});
     };
 
     const handleWatchList = () => {
+        if (!user) {
+            message.error('Please login to add this movie');
+            return;
+        }
         ToggleWatchList({videoId: movie.id})
     };
 

@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const MovieApi = createApi({
   reducerPath: 'movieApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/api/v1/admin/movie',
+    baseUrl: 'https://movon-server-1.onrender.com/api/v1/admin/movie',
     credentials: 'include',
   }),
   tagTypes: ['Movie'],

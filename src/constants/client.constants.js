@@ -89,13 +89,13 @@ export const Successtion = {
 
 export const headerCarousel = [
   {
-    poster: slide_1,
-    logo: slide_1_logo,
-  },
-  {
     poster:
       "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/Slide-2-av.jpg",
     logo: "https://streamvid.gavencreative.com/wp-content/uploads/2023/02/image_svg.svg",
+  },
+  {
+    poster: slide_1,
+    logo: slide_1_logo,
   },
   {
     poster:

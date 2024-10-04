@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useSubscribeMutation } from "../../../../redux/api/Authentication";
 import { message } from "antd";
 import { setUser } from '../../../../redux/slices/user';
+import { useNavigation } from 'react-router-dom';
+import { Loader } from '../../Layout/Animation/Loader';
 
 export const Billing = () => {
   const [cardNumber, setCardNumber] = useState("");
@@ -22,6 +24,7 @@ export const Billing = () => {
 
   const [Subscribe, {isLoading, isError, isSuccess, data}] = useSubscribeMutation();
   const dispatch = useDispatch();
+  const navigate = useNavigation();
 
   const handleCardNumberChange = (e) => {
     let value = e.target.value.replace(/\D/g, ""); 
@@ -58,9 +61,19 @@ export const Billing = () => {
   useEffect(() => {
     if (isSuccess) {
       message.success("Subscription successful"); 
-      dispatch(setUser(data));
+      dispatch(setUser(data.user));
+      // navigate('/client/home/a');
+      window.location.href = '/client/home/a';
     }
-  }, [isSuccess])
+  }, [isSuccess]);
+
+  useEffect(() => {
+    if (isError) {
+      message.error("Subscription failed");
+      // navigate('/client/home/a');
+      window.location.href = '/client/home/a';
+    }
+  }, [isError]);
 
   
   return (
@@ -284,7 +297,7 @@ export const Billing = () => {
               </div>
 
               <button onClick={handleSubscribe} className="w-full bg-violet-600 text-white py-2 rounded-md hover:bg-violet-500 transition-colors">
-                Submit and Check Out
+                {isLoading ? <Loader /> : "Submit and Check Out"}
               </button>
             </form>
           </div>
