@@ -34,6 +34,14 @@ const router = createBrowserRouter([
     },
     {
         path: '/client',
+        element: <Navigate to="/client/home/a" />, 
+    },
+    {
+        path: '/client/home',
+        element: <Navigate to="/client/home/a" />, 
+    },
+    {
+        path: '/client',
         element: <Main/>,
         children: [
             {
