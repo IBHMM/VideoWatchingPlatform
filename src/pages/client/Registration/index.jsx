@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import fancy from "../../../assets/images/fancy.png";
-import "./Registration.css";
+import "./registration.css";
 
 export function Registration() {
 
