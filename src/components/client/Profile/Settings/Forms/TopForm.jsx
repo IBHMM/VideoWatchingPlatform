@@ -63,6 +63,7 @@ export function TopForm({ isOpen, onClose, user }) {
     return (
         <div
             className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 transition-opacity duration-300 p-5 ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+            style={{zIndex : "1000"}}
         >
             <div
                 className={`bg-[#151729] w-[350px] md:w-[450px] rounded-xl p-5 shadow-lg transform transition-transform duration-300 ${isOpen ? 'scale-100' : 'scale-75'}`}
