@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const RegistrationApi = createApi({
   reducerPath: 'registrationApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:3000/api/v1/user',
+    baseUrl: 'https://movon-server-1.onrender.com/api/v1/user',
     credentials: 'include',
   }),
   endpoints: (builder) => ({
