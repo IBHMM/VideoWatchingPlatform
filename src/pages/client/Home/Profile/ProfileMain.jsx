@@ -9,7 +9,7 @@ export function Profile() {
 
   return (
     <main className="flex flex-col items-start justify-between w-screen">
-      <div className="flex flex-col items-center justify-center w-full " style={{ background: "rgb(25, 28, 51)" }}> 
+      <div className="flex flex-col items-center justify-center w-full max-w-[2000px]" style={{ background: "rgb(25, 28, 51)" }}> 
         <div className="flex flex-col items-start justify-between w-[90%] max-sm:w-full">
           <div className="flex items-center justify-start gap-5 w-full p-10">
             <img
